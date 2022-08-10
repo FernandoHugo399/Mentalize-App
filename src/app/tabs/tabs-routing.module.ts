@@ -9,15 +9,19 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+        loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
       },
       {
         path: 'pesquisar',
-        loadChildren: () => import('../pesquisar/pesquisar.module').then(m => m.PesquisarPageModule)
+        loadChildren: () => import('./pesquisar/pesquisar.module').then(m => m.PesquisarPageModule)
       },
       {
         path: 'publicar',
-        loadChildren: () => import('../publicar/publicar.module').then(m => m.PublicarPageModule)
+        loadChildren: () => import('./publicar/publicar.module').then(m => m.PublicarPageModule)
+      },
+      {
+        path: 'perfil',
+        loadChildren: () => import('./perfil/perfil.module').then(m => m.PerfilModule)
       },
       {
         path: '',
