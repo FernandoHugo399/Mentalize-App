@@ -1,5 +1,7 @@
 {
   "name": "mentalize",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
