@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PublicarPage } from './publicar.page';
-import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
 import { PublicarPageRoutingModule } from './publicar-routing.module';
 
@@ -13,7 +12,6 @@ import { PublicarPageRoutingModule } from './publicar-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: PublicarPage }]),
     PublicarPageRoutingModule,
   ],
