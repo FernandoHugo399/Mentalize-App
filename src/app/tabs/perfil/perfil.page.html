@@ -10,35 +10,39 @@
 
 
 <ion-content [fullscreen]="true">
+<!--menu toogle-->
+
   <!--imaegm do perfil e nome-->
-  <ion-card>
-    <ion-img class="perfilzin" src="/assets/cataldinata.jpg" slot=""></ion-img>
-    <ion-card-content>
-      Natã Gabriel Cataldi dos Santos
-    </ion-card-content>
-  </ion-card>
+
+  <ion-item>
+    <ion-avatar class="perfilzin" slot="start">
+      <img src="/assets/cataldinata.jpg">
+    </ion-avatar>
+    <ion-label>Natã Cataldi</ion-label>
+  </ion-item>
+
 
   <!--informações do perfil-->
 
   <ion-card>
     <ion-item href="#" class="ion-activated">
-      <ion-icon name="wifi" slot="start"></ion-icon>
-      <ion-label>Card Link Item 1 activated</ion-label>
+      <ion-icon name="images-outline" slot="start"></ion-icon>
+      <ion-label>Minhas postagens</ion-label>
     </ion-item>
 
     <ion-item href="#">
-      <ion-icon name="wine" slot="start"></ion-icon>
-      <ion-label>Card Link Item 2</ion-label>
+      <ion-icon name="download-outline" slot="start"></ion-icon>
+      <ion-label>Arquivos baixados</ion-label>
     </ion-item>
 
     <ion-item href="#" class="ion-activated">
-      <ion-icon name="warning" slot="start"></ion-icon>
-      <ion-label>Card Button Item 1 activated</ion-label>
+      <ion-icon name="cog-outline" slot="start"></ion-icon>
+      <ion-label>Configurações</ion-label>
     </ion-item>
 
     <ion-item href="#">
-      <ion-icon name="walk" slot="start"></ion-icon>
-      <ion-label>Card Button Item 2</ion-label>
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      <ion-label>Sair</ion-label>
     </ion-item>
   </ion-card>
 

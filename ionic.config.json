@@ -1,7 +1,8 @@
 {
   "name": "mentalize",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
