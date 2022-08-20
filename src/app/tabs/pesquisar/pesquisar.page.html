@@ -1,208 +1,46 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-      <div class="align-logo-center">
-        <img src="/assets/Logo.png" class="ion-padding">
-      </div>
+    <ion-searchbar type="search" placeholder="Pesquise aqui"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-     <ion-searchbar type="username" placeholder="Pesquise aqui"></ion-searchbar>
-<!--mais acessados da semana-->
-     <ion-card>
-      <ion-item href="#">
-        <ion-icon name="eye-outline" slot="start"></ion-icon>
-        <ion-label>Mais acessados
-          da <br> semana</ion-label>
-       </ion-item>
+<ion-content [fullscreen]="true" class="ion-padding-top">
+    <ion-list>
 
-      <ion-card-content>
-        Aqui você encontra os arquivos mais acessados da semana. Vem dar uma olhada!
-      </ion-card-content>
-    </ion-card>
-    <!--Pesquisa por graus-->
-    <ion-title>
-      Filtre os seus estudos<br> por graus:
-    </ion-title>
+      <ion-item-divider>
+        <ion-label color="primary">
+          <h2>Filtro por grau</h2>
+        </ion-label>
+      </ion-item-divider>
+      <div *ngIf="nivelEnsino">
+        <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel}}}}">
 
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="book-outline" slot="start"></ion-icon>
-          <ion-label>Fundamental I</ion-label>
-      </ion-item>
+          <ion-item>
+            <ion-icon [name]="nivel.icone" slot="start"></ion-icon>
 
-      <ion-card-content>
-        Aqui você encontra assuntos referentes aos conteúdos do Fundamental I.
-      </ion-card-content>
-    </ion-card>
+            <ion-label>{{nivel.nivel}}</ion-label>
+          </ion-item>
 
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="book-outline" slot="start"></ion-icon>
-          <ion-label>Fundamental II</ion-label>
-      </ion-item>
+          <ion-card-content> {{nivel.descricao}} </ion-card-content>
+        </ion-card>
+      </div>
 
-      <ion-card-content>
-        Aqui você encontra assuntos referentes aos conteúdos do Fundamental II.
-      </ion-card-content>
-    </ion-card>
+      <ion-item-divider>
+        <ion-label color="primary">
+          <h2>Filtro por materias</h2>
+        </ion-label>
+      </ion-item-divider>
 
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="book-outline" slot="start"></ion-icon>
-          <ion-label>Ensino Médio</ion-label>
-      </ion-item>
+      <div *ngIf="materias">
+        <ion-card *ngFor="let materia of materias" routerLink="/materia/{{materia.materia}}">
 
-      <ion-card-content>
-        Aqui você encontra assuntos referentes aos conteúdos do Ensino Médio.
-      </ion-card-content>
-    </ion-card>
+          <ion-item >
+            <ion-icon [name]="materia.icone" slot="start"></ion-icon>
+            <ion-label>{{materia.materia}}</ion-label>
+          </ion-item>
 
-    <!--Pesquisa por Matérias-->
-    <ion-title>
-      Filtre os seus estudos<br> por matérias:
-    </ion-title>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="color-palette-outline" slot="start"></ion-icon>
-          <ion-label>Artes</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Artes.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="calculator-outline" slot="start"></ion-icon>
-          <ion-label>Matemática</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Matemática.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="text-outline" slot="start"></ion-icon>
-          <ion-label>Língua Portuguesa</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Língua Portuguesa.
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="library-outline" slot="start"></ion-icon>
-          <ion-label>Literatura</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Literatura.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="language-outline" slot="start"></ion-icon>
-          <ion-label>Línguas Estrangeiras</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Inglês e Espanhol.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="earth-outline" slot="start"></ion-icon>
-          <ion-label>Geografia</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Geografia.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="hourglass-outline" slot="start"></ion-icon>
-          <ion-label>História</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de História.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="leaf-outline" slot="start"></ion-icon>
-          <ion-label>Biologia</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Biologia.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="beaker-outline" slot="start"></ion-icon>
-          <ion-label>Química</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Química.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="magnet-outline" slot="start"></ion-icon>
-          <ion-label>Física</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Física.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="skull-outline" slot="start"></ion-icon>
-          <ion-label>Filosofia</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Filosofia.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="walk-outline" slot="start"></ion-icon>
-          <ion-label>Sociologia</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Sociologia.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-item href="#">
-        <ion-icon name="football-outline" slot="start"></ion-icon>
-          <ion-label>Educação Física</ion-label>
-      </ion-item>
-
-      <ion-card-content>
-        Aqui você encontra assuntos de Educação Física.
-      </ion-card-content>
-    </ion-card>
-
+          <ion-card-content> {{materia.descricao}} </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-list>
 </ion-content>

@@ -8,15 +8,6 @@ import { App } from '@capacitor/app';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-    /* constructor(
-      private platform: Platform,
-      private routerOutlet: IonRouterOutlet
-    ) {
-      this.platform.backButton.subscribeWithPriority(-1, () => {
-        if (!this.routerOutlet.canGoBack()) {
-          App.exitApp();
-        }
-      });
-    } */
+
 }
 
