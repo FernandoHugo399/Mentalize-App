@@ -4,43 +4,41 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding-top">
+<ion-content [fullscreen]="true">
     <ion-list>
-
+      <!-- Filtro grau de ensino -->
       <ion-item-divider>
         <ion-label color="primary">
-          <h2>Filtro por grau</h2>
+          Filtro por grau
         </ion-label>
       </ion-item-divider>
-      <div *ngIf="nivelEnsino">
-        <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel}}}}">
 
+      <div *ngIf="nivelEnsino"> <!-- Caso exista valores na váriavel nivel ensino, exiba: -->
+        <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel}}}}"> <!-- Para cada item na variavel nivel ensino, exiba:  -->
           <ion-item>
             <ion-icon [name]="nivel.icone" slot="start"></ion-icon>
-
             <ion-label>{{nivel.nivel}}</ion-label>
           </ion-item>
-
           <ion-card-content> {{nivel.descricao}} </ion-card-content>
         </ion-card>
       </div>
 
+      <!-- Filtro por matérias -->
       <ion-item-divider>
         <ion-label color="primary">
-          <h2>Filtro por materias</h2>
+          Filtro por materias
         </ion-label>
       </ion-item-divider>
 
-      <div *ngIf="materias">
-        <ion-card *ngFor="let materia of materias" routerLink="/materia/{{materia.materia}}">
-
+      <div *ngIf="materias"> <!-- caso exista valores na variável matéria, exiba: -->
+        <ion-card *ngFor="let materia of materias" routerLink="/materia/{{materia.materia}}"> <!-- para cada item na variável, exiba: -->
           <ion-item >
             <ion-icon [name]="materia.icone" slot="start"></ion-icon>
             <ion-label>{{materia.materia}}</ion-label>
           </ion-item>
-
           <ion-card-content> {{materia.descricao}} </ion-card-content>
         </ion-card>
       </div>
+
     </ion-list>
 </ion-content>
