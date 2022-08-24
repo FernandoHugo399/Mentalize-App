@@ -1,8 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { App } from '@capacitor/app';
 import { AlertController, IonTabs, Platform } from '@ionic/angular';
+import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { AlertController, IonTabs, Platform } from '@ionic/angular';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-  @ViewChild('tabs', {static: true}) ionTabs: IonTabs;
+  private routesUrl = [];
   constructor(
     private platform: Platform,
     private router: Router,
@@ -19,20 +20,36 @@ export class TabsPage {
     private location: Location,
   )
   {
+    this.routerEvent();
+
     this.platform.ready().then(()=>{
       this.backButtonEvent();
+    });
+  }
+
+  private routerEvent(){
+    this.router.events.pipe( filter( ( event: NavigationEnd ) => ( event instanceof NavigationEnd )))
+    .subscribe((event: NavigationEnd)=>{
+      if(this.routesUrl.length === 0) {
+        this.routesUrl.push(event.id, event.id);
+      } else {
+        this.routesUrl.push(event.id);
+      }
     });
   }
 
   private backButtonEvent() {
     this.platform.backButton.subscribeWithPriority(999999, ()=>{
       const url = this.router.routerState.snapshot.url;
+      this.routesUrl.splice(-2);
 
-      if(url === '/tabs/home') {
-        this.backButtonALert();
-      } else {
-        this.location.back();
+      if(url === '/tabs/home'){
+        if(this.routesUrl.length === 0) {
+          this.backButtonALert();
+        }
       }
+
+      this.location.back();
     });
   }
 
@@ -55,4 +72,5 @@ export class TabsPage {
 
     await alert.present();
   }
+
 }
