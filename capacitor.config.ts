@@ -16,11 +16,6 @@ const config: CapacitorConfig = {
       SplashScreenDelay: '3000',
       StatusBarBackgroundColor: '#ffffff'
     }
-  },
-  server: {
-    cleartext: true,
-    hostname: '127.0.0.1',
-    url: 'http://localhost:8100'
   }
 };
 
