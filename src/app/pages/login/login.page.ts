@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+  public isLogin = true;
+  public userRegister: User = {};
   public userLogin: User = {};
   private loading: any;
   constructor(
@@ -30,7 +32,7 @@ export class LoginPage {
     }
   }
 
-  /* async register() {
+  async register() {
     await this.presentLoading();
 
     try {
@@ -40,7 +42,7 @@ export class LoginPage {
     } finally {
       this.loading.dismiss();
     }
-  } */
+  }
 
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
