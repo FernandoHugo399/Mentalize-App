@@ -4,6 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true" class="ion-padding">
+  <div>
+    <span>Login</span>
 
+    <ion-item class="ion-margin-top" lines="none">
+      <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top" lines="none">
+      <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
+    </ion-item>
+
+    <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+      Entrar
+    </ion-button>
+  </div>
 </ion-content>
