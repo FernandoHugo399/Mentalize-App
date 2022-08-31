@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class PerfilPage {
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
+  public logout(){
+    this.authService.logout();
+  }
 }
