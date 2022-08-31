@@ -21,6 +21,7 @@ export class AppComponent {
   )
   {
     this.platform.ready().then(()=>{
+      document.body.setAttribute('color-theme', localStorage.getItem('color-theme'));
       SplashScreen.hide();
       this.routerEvent();
       this.backButtonEvent();
