@@ -4,30 +4,28 @@
         <img src="/assets/Logo.png" class="ion-padding">
       </div>
   </ion-toolbar>
+
+  <!--Filtros -->
+  <ion-segment class="ion-padding-bottom" value="recentes">
+    <ion-segment-button value="recentes">
+      <ion-label>Recentes</ion-label>
+      <ion-icon name="earth-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="populares">
+      <ion-label>Populares</ion-label>
+      <ion-icon name="compass-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="seguindo">
+      <ion-label>Seguindo</ion-label>
+      <ion-icon name="id-card-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
-
-</ion-content> 
-<!--Filtros -->
-<ion-segment (ionChange)="segmentChanged($event)">
-  <ion-segment-button value="recentes">
-    <ion-label>Recentes</ion-label>
-    <ion-icon name="earth-outline"></ion-icon>
-  </ion-segment-button>
-  <ion-segment-button value="populares">
-    <ion-label>Populares</ion-label>
-    <ion-icon name="compass-outline"></ion-icon>
-  </ion-segment-button>
-  <ion-segment-button value="seguindo">
-    <ion-label>Seguindo</ion-label>
-    <ion-icon name="id-card-outline"></ion-icon>
-  </ion-segment-button>
-</ion-segment>
+<ion-content class="ion-padding" [fullscreen]="true">
 
   <ion-card>
-    <img src="/src/assets/madison.jpg" />
+    <img src="/assets/madison.jpg" />
     <ion-card-header>
       <ion-card-subtitle>Destination</ion-card-subtitle>
       <ion-card-title>Madison, WI</ion-card-title>
@@ -37,3 +35,17 @@
       Wisconsin Territory in 1836.
     </ion-card-content>
   </ion-card>
+
+  <ion-card>
+    <img src="/assets/atenas.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Destination</ion-card-subtitle>
+      <ion-card-title>Atenas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Atenas was named the capital of the
+      Wisconsin Territory in 1836.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
