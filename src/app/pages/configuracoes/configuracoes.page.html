@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Configurações</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content f>
+  <ion-card>
+    <ion-item  routerLink="#">
+      <ion-icon name="notifications-outline" slot="start"></ion-icon>
+      <ion-label>Notificações</ion-label>
+    </ion-item>
+
+    <ion-item  routerLink="#">
+      <ion-icon name="star-outline" slot="start"></ion-icon>
+      <ion-label>Avalie nosso App</ion-label>
+    </ion-item>
+
+    <ion-item routerLink="#">
+      <ion-icon name="color-palette-outline" slot="start"></ion-icon>
+      <ion-label>Tema</ion-label>
+    </ion-item>
+
+    <ion-item routerLink="/configuracoes">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-label>Entre em contato</ion-label>
+    </ion-item>
+
+    <ion-item routerLink="#">
+      <ion-icon name="document-text-outline" slot="start"></ion-icon>
+      <ion-label>Termos de uso</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Modo escuro</ion-label>
+      <ion-toggle (ionChange)="toggleTheme($event)" slot="end"></ion-toggle>
+    </ion-item>
+  </ion-card>
+</ion-content>
