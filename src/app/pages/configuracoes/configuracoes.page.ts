@@ -1,5 +1,8 @@
-import { AlertController } from '@ionic/angular';
+import { MessageService } from './../../services/message.service';
+import { AlertController, ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { Message } from 'src/app/interfaces/message';
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-configuracoes',
@@ -8,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracoesPage implements OnInit {
   public darkMode: boolean;
-
+  // eslint-disable-next-line @typescript-eslint/ban-types
   constructor(
-    private alertController: AlertController
+    private alertController: AlertController,
+    private messageService: MessageService,
+    private toastController: ToastController,
+    private actionSheetController: ActionSheetController
     ) { }
 
   ngOnInit() {
@@ -21,7 +27,7 @@ export class ConfiguracoesPage implements OnInit {
     }
   }
 
-  toggleTheme(event: string){
+  public toggleTheme(event: string){
     if(event === 'dark'){
       localStorage.setItem('color-theme', 'dark');
       document.body.setAttribute('color-theme', 'dark');
@@ -33,7 +39,7 @@ export class ConfiguracoesPage implements OnInit {
     }
   }
 
-  async presentAlertToggle() {
+  public async presentAlertToggleTheme() {
     let inputs = [];
     if(!this.darkMode){
       inputs = [
@@ -85,5 +91,96 @@ export class ConfiguracoesPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  public async presentAlertSendMessage() {
+    const alert = await this.alertController.create({
+      header: 'Preencha seus dados',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Enviar',
+          role: 'confirm',
+          handler: async () => {
+            const { data } = await alert.onDidDismiss();
+            const { nome, email, telefone, mensagem } = data.values;
+            try {
+              if (!email || !mensagem || !nome || !telefone) {
+                throw new Error('Todos os campos não foram preenchidos!');
+              }
+
+              const message = this.formatMessage(data.values);
+              await this.addMessage(message);
+              this.successToastr();
+            } catch (error) {
+              this.errorToastr(error.message);
+            }
+          },
+        },
+      ],
+      inputs: [
+        {
+          name: 'nome',
+          placeholder: 'Nome',
+        },
+        {
+          name: 'email',
+          placeholder: 'Email',
+        },
+        {
+          name: 'telefone',
+          placeholder: 'Telefone'
+        },
+        {
+          type: 'textarea',
+          placeholder: 'Mensagem',
+          name: 'mensagem'
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
+  public async addMessage(message: Message) {
+    this.messageService.addMessage(message);
+  }
+
+  private formatMessage(message: Message): Message {
+    const formatedNome = message.nome.trim();
+    const formatedEmail = message.email.trim();
+    const formatedMensagem = message.mensagem.trim();
+    const formatedTelefone = message.telefone.toString()
+    .trim().replace(',', '').replace('.', '').replace('-', '').replace(/\s/g, '');
+
+    const formatedMessage = {
+      email: formatedEmail,
+      mensagem: formatedMensagem,
+      nome: formatedNome,
+      telefone: formatedTelefone
+    };
+
+    return formatedMessage;
+  }
+
+  private async errorToastr(message: string){
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      color: 'danger'
+    });
+    toast.present();
+  }
+
+  private async successToastr() {
+    const toast = await this.toastController.create({
+      message: 'Mensagem enviada com sucesso!',
+      duration: 2000,
+      color: 'success'
+    });
+    toast.present();
   }
 }

@@ -7,31 +7,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content f>
+<ion-content fullscreen="true">
   <ion-card>
-    <ion-item  routerLink="#">
+    <ion-item class="ion-activatable ripple-parent" lines="full">
       <ion-icon name="notifications-outline" slot="start"></ion-icon>
       <ion-label>Notificações</ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
     </ion-item>
 
-    <ion-item  routerLink="#">
+    <ion-item class="ion-activatable ripple-parent" lines="full">
       <ion-icon name="star-outline" slot="start"></ion-icon>
       <ion-label>Avalie nosso App</ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
     </ion-item>
 
-    <ion-item (click)="presentAlertToggle()">
+    <ion-item (click)="presentAlertToggleTheme()" class="ion-activatable ripple-parent" lines="full">
       <ion-icon name="color-palette-outline" slot="start"></ion-icon>
       <ion-label>Tema</ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
     </ion-item>
 
-    <ion-item routerLink="/configuracoes">
+    <ion-item (click)="presentAlertSendMessage()" class="ion-activatable ripple-parent" lines="full">
       <ion-icon name="mail-outline" slot="start"></ion-icon>
       <ion-label>Entre em contato</ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
     </ion-item>
 
-    <ion-item routerLink="#">
+    <ion-item class="ion-activatable ripple-parent" lines="full">
       <ion-icon name="document-text-outline" slot="start"></ion-icon>
       <ion-label>Termos de uso</ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
     </ion-item>
   </ion-card>
 </ion-content>
