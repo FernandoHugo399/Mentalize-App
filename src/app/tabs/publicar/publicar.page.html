@@ -8,32 +8,58 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <!--Selecionar o grau-->
-    <ion-item-divider>
-      <ion-label color="primary">
-        Escolha o grau de ensino
-      </ion-label>
-    </ion-item-divider>
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Grau de Ensino</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-item>
+            <ion-select interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino">
+              <ion-select-option *ngFor="let nivel of nivelEnsino" [value]="nivel.nivel">{{nivel.nivel}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+      </ion-accordion>
 
-    <ion-item>
-      <ion-select interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino">
-        <ion-select-option *ngFor="let nivel of nivelEnsino" [value]="nivel.nivel">{{nivel.nivel}}</ion-select-option>
-      </ion-select>
-    </ion-item>
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Conteúdos</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-item>
+            <ion-select interface="popover" placeholder="Selecione a matéria" *ngIf="materias">
+              <ion-select-option *ngFor="let materia of materias" [value]="materia.materia">{{materia.materia}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+      </ion-accordion>
 
+      <ion-accordion value="third">
+        <ion-item slot="header" color="light">
+          <ion-label>Tags</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
 
-    <!--selecionar a matéria-->
-    <ion-item-divider>
-      <ion-label color="primary">
-        Escolha o grau de ensino
-      </ion-label>
-    </ion-item-divider>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
 
-    <ion-item>
-      <ion-select interface="popover" placeholder="Selecione a matéria" *ngIf="materias">
-        <ion-select-option *ngFor="let materia of materias" [value]="materia.materia">{{materia.materia}}</ion-select-option>
-      </ion-select>
-    </ion-item>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block">Publicar</ion-button>
 
   </ion-list>
 </ion-content>
