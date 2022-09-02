@@ -10,20 +10,20 @@
       <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
     </ion-item>
 
-    <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+    <ion-button class="enter-btn" (click)="login()" color="light" expand="block">
       Entrar
     </ion-button>
   </div>
 
   <ion-item>
-    <ion-label>Login or register</ion-label>
+    <ion-label>Mude para entrar ou cadastrar</ion-label>
     <ion-toggle [(ngModel)]="isLogin"></ion-toggle>
   </ion-item>
 
 </ion-content>
 
 <ng-template #Register>
-    <span>Register</span>
+    <span>Cadastro</span>
 
     <ion-item class="ion-margin-top" lines="none">
       <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
@@ -34,6 +34,6 @@
     </ion-item>
 
     <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">
-      Entrar
+      Cadastrar
     </ion-button>
 </ng-template>
