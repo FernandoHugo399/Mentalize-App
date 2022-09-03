@@ -18,6 +18,11 @@ const routes: Routes = [
     path: 'configuracoes',
     loadChildren: () => import('./pages/configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'contate-nos',
+    loadChildren: () => import('./pages/contate-nos/contate-nos.module').then( m => m.ContateNosPageModule),
+    canActivate: [AuthGuard]
   }
 
 ];

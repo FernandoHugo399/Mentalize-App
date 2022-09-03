@@ -7,12 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: ConfiguracoesPage,
-    children:[
-      {
-        path: 'contate-nos',
-        loadChildren: () => import('../contate-nos/contate-nos.module').then( m => m.ContateNosPageModule)
-      }
-    ]
   }
 ];
 
