@@ -7,59 +7,72 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-accordion-group>
-      <ion-accordion value="first">
-        <ion-item slot="header" color="light">
-          <ion-label>Grau de Ensino</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
+  <!-- Filtros de Postagem/Publicação-->
+  <ion-accordion-group>
+
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Grau de formação</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-select interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino">
+          <ion-select-option *ngFor="let nivel of nivelEnsino" [value]="nivel.nivel">{{nivel.nivel}}</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Conteúdos</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-select interface="popover" placeholder="Selecione a matéria" *ngIf="materias">
+          <ion-select-option *ngFor="let materia of materias" [value]="materia.materia">{{materia.materia}}</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>Tags</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list>
+
           <ion-item>
-            <ion-select interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino">
-              <ion-select-option *ngFor="let nivel of nivelEnsino" [value]="nivel.nivel">{{nivel.nivel}}</ion-select-option>
-            </ion-select>
+            <ion-label>Mapa Mental</ion-label>
+            <ion-checkbox slot="end"></ion-checkbox>
           </ion-item>
-        </div>
-      </ion-accordion>
 
-      <ion-accordion value="second">
-        <ion-item slot="header" color="light">
-          <ion-label>Conteúdos</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
           <ion-item>
-            <ion-select interface="popover" placeholder="Selecione a matéria" *ngIf="materias">
-              <ion-select-option *ngFor="let materia of materias" [value]="materia.materia">{{materia.materia}}</ion-select-option>
-            </ion-select>
+            <ion-label>Documentos</ion-label>
+            <ion-checkbox slot="end"></ion-checkbox>
           </ion-item>
-        </div>
-      </ion-accordion>
 
-      <ion-accordion value="third">
-        <ion-item slot="header" color="light">
-          <ion-label>Tags</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
+          <ion-item>
+            <ion-label>Planos de Estudo</ion-label>
+            <ion-checkbox slot="end"></ion-checkbox>
+          </ion-item>
 
-        </div>
-      </ion-accordion>
-    </ion-accordion-group>
+        </ion-list>
+      </div>
+    </ion-accordion>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Card Title</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
+  </ion-accordion-group>
 
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Description</ion-label>
-          <ion-textarea></ion-textarea>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
+  <ion-card>
+    <img src="/assets/atenas.jpg" />
+    <ion-card-header>
+      <ion-card-title>Título</ion-card-title>
+      <ion-card-subtitle>Subtítulo</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-button expand="block">Publicar</ion-button>
-
-  </ion-list>
+  <ion-button expand="block" class="publicar">Publicar</ion-button>
 </ion-content>
