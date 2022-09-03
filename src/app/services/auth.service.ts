@@ -1,19 +1,38 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private auth: AngularFireAuth) { }
+  private userCollection: AngularFirestoreCollection<User>;
+  constructor(
+    private auth: AngularFireAuth,
+    private afs: AngularFirestore) {
+      this.userCollection = this.afs.collection<User>('User');
+     }
 
-  login(user: User) {
-    return this.auth.signInWithEmailAndPassword(user.email, user.password);
+  async login(user: User) {
+    //try {
+      const request = await this.auth.signInWithEmailAndPassword(user.email, user.password);
+      const uid = request.user.uid;
+      this.userCollection.doc(uid).get();
+    //} catch (error) {
+    //  console.log(error);
+    //}
   }
 
-  register(user: User) {
-    return this.auth.createUserWithEmailAndPassword(user.email, user.password);
+  async register(user: User) {
+    //try {
+      const request = await this.auth.createUserWithEmailAndPassword(user.email, user.password);
+      const uid = request.user.uid;
+      this.userCollection.doc(uid).set(user);
+    //} catch (error) {
+    //  console.log(error);
+    //}
+
   }
 
   logout() {
