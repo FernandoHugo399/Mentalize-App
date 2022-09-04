@@ -1,12 +1,68 @@
-span{
-  color:#ffff !important;
-  font-family:'Poppins', sans-serif !important;
-  font-size: 24px !important;
-}
-.enter-btn{
-  border-radius: 27% !important;
-  font-family: 'Poppins', sans-serif !important;
-  color:#000000 !important;
-  font-size: 20px !important;
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+  height: 400px;
+  padding: 35px;
+  background: rgba(207, 237, 255, 0.6);
+  border-radius: 10px
 }
 
+.area-login{
+  background: linear-gradient(272.36deg, #1117A6 0%, #1117A6 0.01%, #080D8C 34%, #04085E 80.26%);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login form{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.login input{
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 1);
+  padding-left: 10px;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.input::placeholder{
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+}
+
+form [type="submit"]{
+  display: block;
+  background-color: rgba(75, 168, 237, 1);
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+p{
+  color: rgba(0, 0, 0, 1);
+  margin-left: 3px;
+}
+
+a{
+  color: #5568fe;
+  text-decoration: none;
+  margin-left: 1px;
+}
+
+img{
+  width: 240px;
+  height: auto;
+  position: absolute;
+  padding: 35px;
+}

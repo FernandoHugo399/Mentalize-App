@@ -1,39 +1,15 @@
-<ion-content fullscreen="true" class="ion-padding">
-  <div *ngIf="isLogin; else Register">
-    <span>Login</span>
-
-    <ion-item class="ion-margin-top" lines="none">
-      <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
-    </ion-item>
-
-    <ion-item class="ion-margin-top" lines="none">
-      <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
-    </ion-item>
-
-    <ion-button class="enter-btn" (click)="login()" color="light" expand="block">
-      Entrar
-    </ion-button>
-  </div>
-
-  <ion-item>
-    <ion-label>Mude para entrar ou cadastrar</ion-label>
-    <ion-toggle [(ngModel)]="isLogin"></ion-toggle>
-  </ion-item>
-
+<ion-content fullscreen="true">
+  <section class="area-login">
+    <div>
+      <img src="/assets/Logo.png">
+    </div>
+    <div class="login">
+      <form>
+        <input type="text" name="nome" placeholder="Nome de usuário" autofocus>
+        <input type="password" name="senha" placeholder="Sua senha">
+        <input type="submit" value="entrar">
+      </form>
+      <p>Não tem uma conta?<a href="#"> Criar conta</a> </p>
+    </div>
+  </section>
 </ion-content>
-
-<ng-template #Register>
-    <span>Cadastro</span>
-
-    <ion-item class="ion-margin-top" lines="none">
-      <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
-    </ion-item>
-
-    <ion-item class="ion-margin-top" lines="none">
-      <ion-input type="password" placeholder="Senha" [(ngModel)]="userRegister.password"></ion-input>
-    </ion-item>
-
-    <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">
-      Cadastrar
-    </ion-button>
-</ng-template>
