@@ -6,14 +6,14 @@
 .area-login {
   background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #8dc4fc 100%);
 	background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #8ec5fc 100%);
-  background-image: -webkit-linear-gradient( 45deg, #ff012b, #0084ff);
+  background-image: -webkit-linear-gradient( 45deg, #1e0033, #280068, #8b51ff);
 	background-size: 200% 200%;
   font-family: 'Poppins', sans-serif;
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  animation: colors 15s ease-in infinite;
+  animation: colors 15s ease infinite;
 }
 
 /* Background animation */
@@ -25,7 +25,6 @@
 	50% {
 		background-position: 100% 50%;
 	}
-
 	100% {
 		background-position: 0% 50%;
 	}
