@@ -59,3 +59,14 @@
   color: rgba(255, 255, 255, 0.664);
   font-size: 14px;
 }
+
+form [type="submit"] {
+  display: block;
+  background-color: rgba(75, 168, 237, 1);
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
