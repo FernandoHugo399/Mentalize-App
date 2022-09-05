@@ -37,3 +37,9 @@
   background: #fff;
   border-radius: 10px
 }
+
+.login form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
