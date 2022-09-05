@@ -43,3 +43,15 @@
   width: 100%;
   flex-direction: column;
 }
+
+.login input {
+  background-color: rgba(184, 184, 184, 0.5);
+  margin: 10px;
+  color: rgba(0, 0, 0, 1);
+  padding-left: 10px;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
