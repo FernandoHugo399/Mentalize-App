@@ -1,32 +1,52 @@
+/* #General */
 
-.login{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 260px;
-  height: 400px;
-  padding: 35px;
-  background: rgba(207, 237, 255, 0.6);
-  border-radius: 10px
-}
-
-.area-login{
-  background: linear-gradient(272.36deg, #1117A6 0%, #1117A6 0.01%, #080D8C 34%, #04085E 80.26%);
+.area-login {
+  background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #8dc4fc 100%);
+	background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #8ec5fc 100%);
+  background-image: -webkit-linear-gradient( 45deg, #ff012b, #0084ff);
+	background-size: 200% 200%;
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  animation: colors 15s ease-in infinite;
 }
 
-.login form{
+/* Background animation */
+@keyframes colors {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+  height: 300px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px
+}
+
+.login form {
   display: flex;
   width: 100%;
   flex-direction: column;
 }
 
-.login input{
+.login input {
+  background-color: rgba(184, 184, 184, 0.5);
   margin: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
   color: rgba(0, 0, 0, 1);
   padding-left: 10px;
   border: none;
@@ -35,33 +55,50 @@
   border-radius: 8px;
 }
 
-.input::placeholder{
-  color: rgba(0, 0, 0, 1);
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.664);
   font-size: 14px;
 }
 
-form [type="submit"]{
+form [type="submit"] {
   display: block;
   background-color: rgba(75, 168, 237, 1);
+  color: #fff;
   font-size: 13px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
 }
 
-p{
-  color: rgba(0, 0, 0, 1);
-  margin-left: 3px;
+.page-title {
+  text-align: center;
+  font-size: 15pt;
+  padding: 0;
+  font-weight: 500;
 }
 
-a{
-  color: #5568fe;
+p {
+  bottom: 0;
+  padding: 2.2%;
+  background: #fff;
+  border-radius: 20px;
+  font-size: 10pt;
+  color: rgba(109, 109, 109, 0.782);
+  margin-left: 3px;
+  position: absolute;
+  margin-bottom: 5%;
+}
+
+a {
+  color: #0497ff;
   text-decoration: none;
   margin-left: 1px;
 }
 
-img{
-  width: 240px;
+img {
+  top: 0;
+  margin-top: 20%;
+  width: 250px;
   height: auto;
   position: absolute;
 }
