@@ -39,7 +39,7 @@
   height: 300px;
   padding: 15px;
   background: #fff;
-  border-radius: 10px
+  border-radius: 14px
 }
 
 .login form {
@@ -81,22 +81,34 @@ form [type="submit"] {
   font-weight: 500;
 }
 
-p {
-  bottom: 0;
-  padding: 2.2%;
-  background: #fff;
-  border-radius: 20px;
-  font-size: 10pt;
-  color: rgba(109, 109, 109, 0.782);
-  margin-left: 3px;
+.cadastro {
   position: absolute;
   margin-bottom: 5%;
+  width: 250px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  padding: 2.5%;
+  background: #fff;
+  border-radius: 14px 0 0 14px;
+  font-size: 10pt;
+  text-align: center;
+  color: rgba(109, 109, 109, 0.782);
 }
 
 a {
-  color: #0497ff;
+  background: #275fcf;
+  border-radius: 0 16px 16px 0;
+  text-align: center;
+  font-size: 10pt;
+  padding: 2.5%;
+  margin: none;
+  color: #fff;
   text-decoration: none;
-  margin-left: 1px;
 }
 
 img {
