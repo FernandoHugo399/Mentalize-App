@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  public isLogin = true;
+  public isLogin = false;
   public userRegister: User = {};
   public userLogin: User = {};
   private loading: any;
@@ -21,6 +21,7 @@ export class LoginPage {
 
 
   async login() {
+    this.isLogin = true;
     await this.presentLoading();
 
     try {
@@ -29,6 +30,8 @@ export class LoginPage {
       this.presentToast(error.message);
     } finally {
       this.loading.dismiss();
+      this.isLogin = false;
+      this.userLogin = {};
     }
   }
 
@@ -41,6 +44,19 @@ export class LoginPage {
       this.presentToast(error.message);
     } finally {
       this.loading.dismiss();
+    }
+  }
+
+  async googleSignIn() {
+    this.isLogin = true;
+    await this.presentLoading();
+    try {
+      await this.authService.googleSignIn();
+    } catch (error) {
+      this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+      this.isLogin = false;
     }
   }
 
