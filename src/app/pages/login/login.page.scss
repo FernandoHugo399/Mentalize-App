@@ -70,3 +70,28 @@ form [type="submit"] {
   cursor: pointer;
 }
 
+.page-title {
+  text-align: center;
+  font-size: 15pt;
+  padding: 0;
+  font-weight: 500;
+}
+
+p {
+  bottom: 0;
+  padding: 2.2%;
+  background: #fff;
+  border-radius: 20px;
+  font-size: 10pt;
+  color: rgba(109, 109, 109, 0.782);
+  margin-left: 3px;
+  position: absolute;
+  margin-bottom: 5%;
+}
+
+a {
+  color: #0497ff;
+  text-decoration: none;
+  margin-left: 1px;
+}
+
