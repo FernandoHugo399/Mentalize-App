@@ -53,6 +53,7 @@
   margin: 10px;
   color: rgba(0, 0, 0, 1);
   padding-left: 10px;
+  font-size: 12px;
   border: none;
   height: 45px;
   outline: none;
@@ -61,7 +62,6 @@
 
 .input::placeholder {
   color: rgba(255, 255, 255, 0.664);
-  font-size: 14px;
 }
 
 form [type="submit"] {
