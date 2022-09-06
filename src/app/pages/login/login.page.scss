@@ -39,7 +39,7 @@
   height: 62vh;
   padding: 15px;
   background: #fff;
-  border-radius: 27px;
+  border-radius: 30px;
 }
 
 .login form {
@@ -57,16 +57,34 @@
   border: none;
   height: 45px;
   outline: none;
-  border-radius: 50px;
+  border-radius: 27px;
+}
+
+input [type="submit"] {
+  border-radius: 27px;
 }
 
 .input::placeholder {
   color: rgba(255, 255, 255, 0.664);
 }
 
-ion-button{
+button{
+  margin-top: 10px;
+  height: 45px;
+  border-radius: 27px;
+}
+
+button.round-ico {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: #00b7ff;
+  width: 45px;
   margin-top: 20px;
   height: 45px;
+  font-size: 16pt;
+  outline: none;
 }
 
 .page-title {

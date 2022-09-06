@@ -9,17 +9,17 @@
         <ion-text class="page-title"><h2>Login</h2></ion-text>
         <input type="text" name="nome" placeholder="Nome de usuário" [(ngModel)]="userLogin.email" autofocus>
         <input type="password" name="senha" placeholder="Sua senha" [(ngModel)]="userLogin.password">
-        <ion-button (click)='login()' [disabled]="isLogin">Entrar</ion-button>
+        <button type="submit" (click)='login()' [disabled]="isLogin">Entrar</button>
         <div class="accounts">
-          <ion-button class="round-ico" (click)='googleSignIn()' [disabled]="isLogin">
+          <button class="round-ico" (click)='googleSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-google"></ion-icon>
-          </ion-button>
-          <ion-button class="round-ico" (click)='facebookSignIn()' [disabled]="isLogin">
+          </button>
+          <button class="round-ico" (click)='facebookSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-facebook"></ion-icon>
-          </ion-button>
-          <ion-button class="round-ico" (click)='facebookSignIn()' [disabled]="isLogin">
+          </button>
+          <button class="round-ico" (click)='facebookSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-microsoft"></ion-icon>
-          </ion-button>
+          </button>
         </div>
       </form>
     </div>
