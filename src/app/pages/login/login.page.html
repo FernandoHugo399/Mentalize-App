@@ -11,13 +11,13 @@
         <input type="password" name="senha" placeholder="Sua senha" [(ngModel)]="userLogin.password">
         <ion-button (click)='login()' [disabled]="isLogin">Entrar</ion-button>
         <div class="accounts">
-          <ion-button (click)='googleSignIn()' [disabled]="isLogin">
+          <ion-button class="round-ico" (click)='googleSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-google"></ion-icon>
           </ion-button>
-          <ion-button (click)='facebookSignIn()' [disabled]="isLogin">
+          <ion-button class="round-ico" (click)='facebookSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-facebook"></ion-icon>
           </ion-button>
-          <ion-button (click)='facebookSignIn()' [disabled]="isLogin">
+          <ion-button class="round-ico" (click)='facebookSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-microsoft"></ion-icon>
           </ion-button>
         </div>
