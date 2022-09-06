@@ -35,7 +35,8 @@ export class LoginPage {
     }
   }
 
-  /* async register() {
+  /*
+   async register() {
     await this.presentLoading();
 
     try {
@@ -65,6 +66,19 @@ export class LoginPage {
     await this.presentLoading();
     try {
       await this.authService.facebookSignIn();
+    } catch (error) {
+      this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+      this.isLogin = false;
+    }
+  }
+
+  async githubSignIn() {
+    this.isLogin = true;
+    await this.presentLoading();
+    try {
+      await this.authService.githubSignIn();
     } catch (error) {
       this.presentToast(error.message);
     } finally {
