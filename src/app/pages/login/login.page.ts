@@ -78,6 +78,8 @@ export class LoginPage {
     await this.presentLoading();
     try {
       await this.authService.facebookSingIn();
+    } catch (error) {
+      this.presentToast(error.message);
     }
   }
 
