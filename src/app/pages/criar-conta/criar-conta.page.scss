@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+/*
 body{
     background-image: url('/src/assets/background.png');
     background-position: center;
@@ -16,16 +17,19 @@ body{
     padding: 20px;
     min-height: 100vh;
 }
-.w50{
+*/
+.w50 {
     width: 50%;
     float: left;
     padding-right: 15px;
 }
-.box{
+
+.box {
     display: flex;
     width: 930px;
 }
-.img-box{
+
+.img-box {
     background-color: rgba(255, 255, 255, 0.5);
     width: 50%;
     display: flex;
@@ -33,40 +37,48 @@ body{
     padding: 20px;
     border-radius: 20px  0 0 20px;
 }
-.img-box img{
+
+.img-box img {
     width: 100%;
 }
-.form-box{
+
+.form-box {
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(40px);
     padding: 30px 40px;
     width: 50%;
     border-radius: 0 20px 20px 0;
 }
-.form-box h2{
+
+.form-box h2 {
     font-size: 30px;
 }
-.form-box p{
+
+.form-box p {
     font-weight: bold;
     color: #3D3D3D;
 }
-.form-box p a{
+
+.form-box p a {
     color: #FF008A;
     text-decoration: none;
 }
-.form-box form{
+.form-box form {
     margin: 20px 0;
 }
-form .input-group{
+
+form .input-group {
     margin-bottom: 15px;
 }
-form .input-group label{
+
+form .input-group label {
     color: #3D3D3D;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
-form .input-group input{
+
+form .input-group input {
     width: 100%;
     height: 47px;
     background-color: rgba(255, 255, 255, 0.32);
@@ -78,10 +90,12 @@ form .input-group input{
     color: #616161;
     transition: all 0.4s ease;
 }
-form .input-group input:focus{
+
+form .input-group input:focus {
     border-color: #ff008869;
 }
-form .input-group button{
+
+form .input-group button {
     width: 100%;
     height: 47px;
     background: #FF008A;
@@ -93,6 +107,7 @@ form .input-group button{
     cursor: pointer;
     font-size: 16px;
 }
+
 @media (max-width:930px) {
     .img-box{
         display: none;
@@ -105,6 +120,7 @@ form .input-group button{
         border-radius: 20px;
     }
 }
+
 @media (max-width:500px) {
     .w50{
         width: 100%;
