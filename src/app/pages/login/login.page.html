@@ -11,6 +11,7 @@
         <input type="password" name="senha" placeholder="Sua senha" [(ngModel)]="userLogin.password">
         <ion-button (click)='login()' [disabled]="isLogin">Entrar</ion-button>
         <ion-button (click)='googleSignIn()' [disabled]="isLogin">Entrar com o google</ion-button>
+        <ion-button (click)='facebookSignIn()' [disabled]="isLogin">Entrar com o google</ion-button>
       </form>
     </div>
 

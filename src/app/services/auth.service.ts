@@ -1,5 +1,6 @@
 /* eslint-disable new-parens */
 import { GoogleAuthProvider } from '@angular/fire/auth';
+import { FacebookAuthProvider } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
@@ -47,5 +48,9 @@ export class AuthService {
 
   googleSignIn() {
     return this.auth.signInWithPopup(new GoogleAuthProvider);
+  }
+
+  facebookSignIn() {
+    return this.auth.signInWithPopup(new FacebookAuthProvider);
   }
 }
