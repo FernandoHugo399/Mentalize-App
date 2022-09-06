@@ -73,19 +73,6 @@ export class LoginPage {
     }
   }
 
-  async facebookSingIn() {
-    this.isLogin = true;
-    await this.presentLoading();
-    try {
-      await this.authService.facebookSingIn();
-    } catch (error) {
-      this.presentToast(error.message);
-    } finally {
-      this.loading.dismiss();
-      this.isLogin = false;
-    }
-  }
-
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
     return this.loading.present();
