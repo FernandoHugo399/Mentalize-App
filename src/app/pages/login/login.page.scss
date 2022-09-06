@@ -64,6 +64,7 @@
 }
 
 button{
+  background: #3e51ff;
   margin-top: 10px;
   height: 45px;
   border-radius: 27px;
@@ -74,9 +75,12 @@ button.round-ico {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background: #00b7ff;
+  background: #3e51ff;
   width: 45px;
-  margin-top: 20px;
+  margin: 10px 3px;
+  height: 45px;
+  font-size: 16pt;
+  outline: none;
 }
 
 ion-button{
