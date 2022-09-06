@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 /* #General */
-
 .area-login {
   background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #8dc4fc 100%);
 	background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #8ec5fc 100%);
@@ -15,7 +14,7 @@
   flex-direction: column;
   animation: colors 15s ease infinite;
   padding: 2%;
-}
+ }
 
 /* Background animation */
 @keyframes colors {
@@ -31,15 +30,15 @@
 }
 
 .login {
-  margin: 10px 0;
+  margin: 3px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80vw;
-  height: 62vh;
+  height: 52vh;
   padding: 15px;
   background: #fff;
-  border-radius: 27px;
+  border-radius: 30px;
 }
 
 .login form {
@@ -50,23 +49,26 @@
 
 .login input {
   background-color: rgba(184, 184, 184, 0.5);
-  margin: 12px 0;
+  margin: 5px 0;
   color: rgba(0, 0, 0, 1);
   padding-left: 10px;
   font-size: 10pt;
   border: none;
   height: 45px;
   outline: none;
-  border-radius: 50px;
+  border-radius: 27px;
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.664);
+  color: #ffffffa9;
 }
 
 ion-button{
-  margin-top: 20px;
+  margin-top: 10px;
   height: 45px;
+}
+.round-ico{
+border-radius: 27px !important;
 }
 
 .page-title {
@@ -116,7 +118,18 @@ a:hover {
 
 img {
   top: 0;
-  margin-top: 20%;
+  margin-top: 3%;
   width: 250px;
   height: auto;
+}
+
+h3{
+  color: #ffff;
+  text-align: center;
+  align-items: center;
+  font-size: 13pt;
+  top: 0;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
 }
