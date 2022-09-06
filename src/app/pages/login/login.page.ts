@@ -35,7 +35,7 @@ export class LoginPage {
     }
   }
 
-  async register() {
+  /* async register() {
     await this.presentLoading();
 
     try {
@@ -45,7 +45,7 @@ export class LoginPage {
     } finally {
       this.loading.dismiss();
     }
-  }
+  } */
 
   async googleSignIn() {
     this.isLogin = true;

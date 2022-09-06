@@ -23,9 +23,11 @@ const routes: Routes = [
     path: 'contate-nos',
     loadChildren: () => import('./pages/contate-nos/contate-nos.module').then( m => m.ContateNosPageModule),
     canActivate: [AuthGuard]
-  },  {
+  },
+  {
     path: 'criar-conta',
-    loadChildren: () => import('./pages/criar-conta/criar-conta.module').then( m => m.CriarContaPageModule)
+    loadChildren: () => import('./pages/criar-conta/criar-conta.module').then( m => m.CriarContaPageModule),
+    canActivate: [LoggedGuard]
   },
 
 ];

@@ -18,24 +18,17 @@ export class AuthService {
      }
 
   async login(user: User) {
-    //try {
       const request = await this.auth.signInWithEmailAndPassword(user.email, user.password);
       const uid = request.user.uid;
       this.userCollection.doc(uid).get();
-    //} catch (error) {
-    //  console.log(error);
-    //}
+      localStorage.setItem('userId', uid);
   }
 
   async register(user: User) {
-    //try {
       const request = await this.auth.createUserWithEmailAndPassword(user.email, user.password);
       const uid = request.user.uid;
       this.userCollection.doc(uid).set(user);
-    //} catch (error) {
-    //  console.log(error);
-    //}
-
+      localStorage.setItem('userId', uid);
   }
 
   logout() {
