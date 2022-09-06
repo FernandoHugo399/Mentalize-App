@@ -59,7 +59,7 @@ export class LoginPage {
       this.isLogin = false;
     }
   }
-  /*
+
   async facebookSignIn() {
     this.isLogin = true;
     await this.presentLoading();
@@ -71,7 +71,7 @@ export class LoginPage {
       this.loading.dismiss();
       this.isLogin = false;
     }
-  }*/
+  }
 
   async facebookSingIn() {
     this.isLogin = true;
@@ -80,6 +80,9 @@ export class LoginPage {
       await this.authService.facebookSingIn();
     } catch (error) {
       this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+      this.isLogin = false;
     }
   }
 
