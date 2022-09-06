@@ -46,7 +46,7 @@ export class AuthService {
     return this.auth;
   }
 
-  googleSignIn() {
+  googleSingIn() {
     return this.auth.signInWithPopup(new GoogleAuthProvider);
   }
 
