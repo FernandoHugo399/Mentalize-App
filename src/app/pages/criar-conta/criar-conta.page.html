@@ -1,44 +1,48 @@
-
-<ion-content>
-  <div class="box">
-    <div class="img-box">
-        <img src="img-formulario.png">
+<ion-content fullscreen="true">
+  <section class="area-cadastro">
+    <div>
+      <h3>Bem-vindo ao</h3>
+      <img src="/assets/Logo.png">
     </div>
-    <div class="form-box">
-        <h2>Criar Conta</h2>
-       <p>Já possui uma conta?<a routerLink="/login">Logar</a> </p>
-        <form action="#">
-            <div class="input-group">
-                <label for="nome"> Nome Completo</label>
-                <input type="text" id="nome" placeholder="Digite o seu nome completo" required>
-            </div>
 
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Digite o seu email" required>
-            </div>
+    <div class="login">
+      <form>
+        <ion-text class="page-title"><h2>Cadastrar</h2></ion-text>
 
-            <div class="input-group">
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" placeholder="Digite o seu telefone" required>
-            </div>
+        <input type="text" name="nome" placeholder="Digite seu e-mail" autofocus>
 
-            <div class="input-group w50">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" placeholder="Digite sua senha" required>
-            </div>
+        <input type="text" name="nome" placeholder="User name" autofocus>
 
-            <div class="input-group w50">
-                <label for="Confirmarsenha">Confirmar Senha</label>
-                <input type="password" id="Confirmarsenha" placeholder="Confirme a senha" required>
-            </div>
+        <input type="text" name="nome" placeholder="Biografia" autofocus>
 
-            <div class="input-group">
-                <button>Cadastrar</button>
-            </div>
+        <input type="tel" name="telefone" placeholder="Digite seu telefone" autofocus required pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"placeholder="11 99999-9999">
 
-        </form>
+        <input type="date" name="nome" placeholder="Data de nascimento" autofocus>
+
+        <input type="text" name="nome" placeholder="Biografia" autofocus>
+
+        <input type="password" name="senha" placeholder="Senha">
+
+        <button type="submit">Cadastrar</button>
+        <div class="accounts">
+
+          <button class="round-ico">
+            <ion-icon name="logo-google"></ion-icon>
+          </button>
+          <button class="round-ico">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+          <button class="round-ico">
+            <ion-icon name="logo-microsoft"></ion-icon>
+          </button>
+        </div>
+      </form>
     </div>
-</div>
- 
+
+    <div class="logar">
+      <p>Já tem uma conta?</p>
+      <a routerLink="/login">Fazer login</a>
+    </div>
+
+  </section>
 </ion-content>

@@ -11,5 +11,6 @@ export class CriarContaPage implements OnInit {
 
   ngOnInit() {
   }
-
 }
+
+
