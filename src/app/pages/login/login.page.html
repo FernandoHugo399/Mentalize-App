@@ -10,8 +10,12 @@
         <input type="text" name="nome" placeholder="Nome de usuário" [(ngModel)]="userLogin.email" autofocus>
         <input type="password" name="senha" placeholder="Sua senha" [(ngModel)]="userLogin.password">
         <ion-button (click)='login()' [disabled]="isLogin">Entrar</ion-button>
-        <ion-button (click)='googleSignIn()' [disabled]="isLogin">Entrar com o google</ion-button>
-        <ion-button (click)='facebookSignIn()' [disabled]="isLogin">Entrar com o google</ion-button>
+        <ion-button (click)='googleSignIn()' [disabled]="isLogin">
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
+        <ion-button (click)='facebookSignIn()' [disabled]="isLogin">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
       </form>
     </div>
 
