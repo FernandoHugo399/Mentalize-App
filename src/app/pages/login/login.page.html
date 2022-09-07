@@ -9,7 +9,7 @@
     <div class="login">
       <form>
         <ion-text class="page-title"><h2>Login</h2></ion-text>
-        <input type="text" name="nome" placeholder="Nome de usuário" [(ngModel)]="userLogin.email" autofocus>
+        <input type="text" name="nome" placeholder="Usuário ou E-mail" [(ngModel)]="userLogin.email" autofocus>
         <input type="password" name="senha" placeholder="Sua senha" [(ngModel)]="userLogin.password">
         <button type="submit" (click)='login()' [disabled]="isLogin">Entrar</button>
         <div class="accounts">
