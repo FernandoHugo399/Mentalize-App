@@ -35,37 +35,11 @@ export class LoginPage {
     }
   }
 
-  /*
-   async register() {
-    await this.presentLoading();
-
-    try {
-      await this.authService.register(this.userRegister);
-    } catch (error) {
-      this.presentToast(error.message);
-    } finally {
-      this.loading.dismiss();
-    }
-  } */
-
   async googleSignIn() {
     this.isLogin = true;
     await this.presentLoading();
     try {
       await this.authService.googleSignIn();
-    } catch (error) {
-      this.presentToast(error.message);
-    } finally {
-      this.loading.dismiss();
-      this.isLogin = false;
-    }
-  }
-
-  async facebookSignIn() {
-    this.isLogin = true;
-    await this.presentLoading();
-    try {
-      await this.authService.facebookSignIn();
     } catch (error) {
       this.presentToast(error.message);
     } finally {
