@@ -12,3 +12,15 @@ ion-segment{
     font-size: 10px;
     font-weight: bold;
 }
+
+.actions-btn{
+    ion-button{
+        border-radius: 50px;
+        background: #2f303573 !important;
+        width: 90px;
+        margin: 0 0 5% 2.5%;
+        height: 25px;
+        font-size: 10pt;
+        outline: none;
+    }
+}
