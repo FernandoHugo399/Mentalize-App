@@ -29,6 +29,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/criar-conta/criar-conta.module').then( m => m.CriarContaPageModule),
     canActivate: [LoggedGuard]
   },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./pages/perfil-outro-usuario/perfil-outro-usuario.module').then( m => m.PerfilOutroUsuarioPageModule)
+  },
+
 
 ];
 @NgModule({
