@@ -33,6 +33,11 @@ const routes: Routes = [
     path: 'perfil/:id',
     loadChildren: () => import('./pages/perfil-outro-usuario/perfil-outro-usuario.module').then( m => m.PerfilOutroUsuarioPageModule)
   },
+  {
+    path: 'slides',
+    loadChildren: () => import('./components/slides/slides.module').then( m => m.SlidesPageModule)
+  },
+
 
 
 ];
