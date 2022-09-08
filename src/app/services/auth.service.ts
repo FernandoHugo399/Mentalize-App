@@ -44,10 +44,6 @@ export class AuthService {
     return this.auth.signInWithPopup(new GoogleAuthProvider);
   }
 
-  facebookSignIn() {
-    return this.auth.signInWithPopup(new FacebookAuthProvider);
-  }
-
   githubSignIn() {
     return this.auth.signInWithPopup(new GithubAuthProvider);
   }
