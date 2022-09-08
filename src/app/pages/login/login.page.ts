@@ -10,11 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPage {
   public isLogin = false;
-  public userRegister: User = {};
   public userLogin: User = {};
   private loading: any;
   constructor(
-   private authService: AuthService,
+    private authService: AuthService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
   ) { }
