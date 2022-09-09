@@ -1,8 +1,22 @@
 ion-slide{
+    animation: colors 15s ease infinite;
     margin: 0;
     padding: 0;
     height: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, #003154, #BBE8E1);
+    background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8dc4fc 100%);
+	background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8ec5fc 100%);
+    background-image: -webkit-linear-gradient( 45deg, #1e0033, #5160ff);
 }
 
+@keyframes colors {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
