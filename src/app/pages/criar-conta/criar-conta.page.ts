@@ -5,12 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './criar-conta.page.html',
   styleUrls: ['./criar-conta.page.scss'],
 })
-export class CriarContaPage implements OnInit {
-
+export class CriarContaPage {
+  public isLogin = false;
   constructor() { }
-
-  ngOnInit() {
-  }
 }
 
 
