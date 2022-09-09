@@ -17,10 +17,10 @@
         <button type="submit">Cadastrar</button>
 
         <div class="accounts">
-          <button class="round-ico">
+          <button class="round-ico" (click)='googleSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-google"></ion-icon>
           </button>
-          <button class="round-ico">
+          <button class="round-ico" (click)='githubSignIn()' [disabled]="isLogin">
             <ion-icon name="logo-github"></ion-icon>
           </button>
         </div>
