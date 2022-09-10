@@ -18,7 +18,6 @@ export class LoginPage {
     private toastCtrl: ToastController,
   ) { }
 
-
   async login() {
     this.isLogin = true;
     await this.presentLoading();
