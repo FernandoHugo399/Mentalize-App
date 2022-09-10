@@ -25,12 +25,17 @@
   </ion-list>
 
   <ion-card>
-    <img src="/assets/atenas.jpg"/>
-      <ion-card-header>
-        <ion-item>
-          <ion-label position="floating">Nome</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
+    <div class="center-label">
+      <label for="upfile">
+        <div>Escolher arquivo</div>
+      </label>
+    </div>
+    <input type="file" id="upfile" name="file" (change)="readURL($event)" #inpFiles accept=".png,.svg,.jpg,.jpeg">
+    <ion-card-header>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
