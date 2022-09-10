@@ -27,12 +27,8 @@ export class AuthService {
       const request = await this.auth.createUserWithEmailAndPassword(user.email, user.password);
       const uid = request.user.uid;
       this.userCollection.doc(uid).set({
-        apelido: user.apelido,
         email: user.email,
-        genero: user.genero,
-        nascimento: user.nascimento,
         nome: user.nome,
-        telefone: user.telefone
       });
   }
 
@@ -44,11 +40,21 @@ export class AuthService {
     return this.auth;
   }
 
-  googleSignIn() {
-    return this.auth.signInWithPopup(new GoogleAuthProvider);
+  async googleSignIn() {
+    const request = await this.auth.signInWithPopup(new GoogleAuthProvider);
+    const uid = request.user.uid;
+    console.log(request);
+
+    this.userCollection.doc(uid).get().subscribe(res => {
+      /* if(!res.exists) {
+        this.userCollection.doc(uid).set({
+
+        });
+      } */
+    });
   }
 
-  githubSignIn() {
+  async githubSignIn() {
     return this.auth.signInWithPopup(new GithubAuthProvider);
   }
 }
