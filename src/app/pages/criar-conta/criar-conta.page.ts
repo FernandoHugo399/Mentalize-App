@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { User } from 'src/app/interfaces/user';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,10 +10,13 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CriarContaPage {
   public isLogin = false;
+  public userLogin: User = {};
   public userRegister: User = {};
+  private loading: any;
   constructor(
     private authService: AuthService,
-    
+    private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController,
   ) { }
 }
 
