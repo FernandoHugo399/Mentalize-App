@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/interfaces/user';
+import { LoadingController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-criar-conta',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarContaPage {
   public isLogin = false;
-  constructor() { }
+  public userRegister: User = {};
+  constructor(
+    private authService: AuthService,
+    
+  ) { }
 }
 
 
