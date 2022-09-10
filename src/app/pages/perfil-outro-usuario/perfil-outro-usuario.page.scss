@@ -92,18 +92,30 @@ ion-list {
 }
 
 
-.publi-user{
-    margin-top: 10%;
+.publi-user {
+    margin-top: 16%;
     display: flex;
     flex-direction: column;
     justify-content: space-around 3%;
 }
 
-ion-segment{
+.post-title {
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    ion-icon{
+        margin-left: 25%;
+        padding: 0;
+    }
+        p{
     font-family: 'Poppins';
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 0;
+   /* text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;*/
+}
 }
 

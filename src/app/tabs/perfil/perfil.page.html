@@ -1,49 +1,157 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-      <div class="align-logo-center">
-        <img src="/assets/Logo.png" class="ion-padding">
-      </div>
-  </ion-toolbar>
-</ion-header>
-
-
-
-
 <ion-content [fullscreen]="true">
-<!--menu toogle-->
 
-  <!--imaegm do perfil e nome-->
+  <ion-toolbar color="tertiary"> 
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" align="center"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> 
+    <ion-title class="user-name">[nome do usuário]</ion-title>
+  </ion-toolbar>
 
-  <ion-item >
-    <ion-avatar class="perfilzin" slot="start">
-      <img src="/assets/cataldinata.jpg">
-    </ion-avatar>
-    <ion-label class="name-user">Natã Cataldi</ion-label>
+  <ion-grid class="main-header">
+    <div align="center">
+      <ion-avatar align="center">
+        <img src="/assets/cataldinata.jpg" alt="imagem do usuário">
+      </ion-avatar>
+    </div>
+  </ion-grid>
+
+
+<ion-row class="ion-padding-horizontal">
+  <ion-col size="5">
+    <ion-item lines="none" class="ion-text-center">
+      <ion-icon name="people-outline" color="primary"></ion-icon>
+      <ion-label>
+        34
+        <p>Seguidores</p>
+      </ion-label>
+    </ion-item>
+  </ion-col>
+  <ion-col size="5">
+    <ion-item lines="none" class="ion-text-center">
+      <ion-icon name="map-outline" color="primary"></ion-icon>
+      <ion-label>
+        14
+        <p>Postagens</p>
+      </ion-label>
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+<ion-list lines="full">
+  <ion-item>
+    <ion-label>
+      <ion-text>Nome</ion-text>
+      <p><ion-text color="dark">Natã Cataldi</ion-text></p>
+    </ion-label>
   </ion-item>
+  <ion-item>
+    <ion-label>
+      <ion-text>Biografia<ion-icon name="arrow-dropleft"></ion-icon></ion-text>
+      <p><ion-text color="dark">E aew?! ksksks</ion-text></p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <ion-text>Telefone</ion-text>
+      <p><ion-text color="dark">(81) 9 9976-0358</ion-text></p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <ion-text>Email</ion-text>
+      <p><ion-text color="dark">natacataldi@gmail.com</ion-text></p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <ion-text>Nascimento</ion-text>
+      <p><ion-text color="dark">19/02/2005</ion-text></p>
+    </ion-label>
+  </ion-item>
+  
+</ion-list>
 
+<ion-segment class="ion-padding-bottom" value="postagens">
+  <ion-segment-button value="recentes">
+    <ion-label>Postagens</ion-label>
+    <ion-icon name="map-outline"></ion-icon>
+  </ion-segment-button>
 
-  <!--informações do perfil-->
+  <ion-segment-button value="baixados">
+    <ion-label>Baixados</ion-label>
+    <ion-icon name="download-outline"></ion-icon>
+  </ion-segment-button>
+</ion-segment>
 
-  <ion-card>
-    <ion-item href="#">
-      <ion-icon name="images-outline" slot="start"></ion-icon>
-      <ion-label>Minhas postagens</ion-label>
-    </ion-item>
-
-    <ion-item href="#">
-      <ion-icon name="download-outline" slot="start"></ion-icon>
-      <ion-label>Arquivos baixados</ion-label>
-    </ion-item>
-
-    <ion-item routerLink="/configuracoes">
-      <ion-icon name="cog-outline" slot="start"></ion-icon>
-      <ion-label>Configurações</ion-label>
-    </ion-item>
-
-    <ion-item (click)="logout()">
-      <ion-icon name="log-out-outline" slot="start"></ion-icon>
-      <ion-label>Sair</ion-label>
-    </ion-item>
-  </ion-card>
+<div class="publi-user">   
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+      <img src="/assets/cataldinata.jpg" alt="bilabilu">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+      <img src="/assets/cataldinata.jpg" alt="bilabilu">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+      <img src="/assets/cataldinata.jpg" alt="bilabilu">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+      <img src="/assets/cataldinata.jpg" alt="bilabilu">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+        <img src="/assets/cataldinata.jpg" alt="bilabilu">
+        </ion-col>
+      <ion-col>
+      <img src="/assets/cataldinata.jpg" alt="bilabilu">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 
 </ion-content>
