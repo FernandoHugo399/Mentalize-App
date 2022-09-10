@@ -23,11 +23,9 @@ export class CriarContaPage {
     await this.presentLoading();
 
     try {
-      if(!this.userRegister.apelido || !this.userRegister.email || !this.userRegister.nome
-         || !this.userRegister.nascimento || !this.userRegister.genero
-         || !this.userRegister.password || !this.userRegister.telefone) {
+      if(!this.userRegister.email || !this.userRegister.nome || !this.userRegister.password) {
           throw new Error('Preencha todos os campos!');
-         }
+      }
 
       const user = this.filterUser(this.userRegister);
       await this.authService.register(user);
@@ -44,12 +42,8 @@ export class CriarContaPage {
 
   private filterUser(user: User): User {
     return {
-      apelido: user.apelido.trim(),
       email: user.email.trim(),
-      genero: user.genero.trim(),
-      nascimento: user.nascimento.trim(),
       nome: user.nome.trim(),
-      telefone: user.telefone.trim(),
       password: user.password
     };
   }
