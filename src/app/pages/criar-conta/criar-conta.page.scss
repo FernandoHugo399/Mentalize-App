@@ -8,7 +8,7 @@
   font-family: 'Poppins', sans-serif;
   display: flex;
   height: 100vh;
-  min-height: 860px;
+  min-height: 768px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 640px;
+  height: 560px;
   padding: 15px;
   background: #fff;
   border-radius: 30px;
@@ -63,7 +63,7 @@
   color: #ffffffa9;
 }
 
-select:first-child{
+select option:first-of-type{
   display: none;
 }
 

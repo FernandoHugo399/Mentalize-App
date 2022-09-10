@@ -20,13 +20,20 @@ export class AuthService {
   async login(user: User) {
       const request = await this.auth.signInWithEmailAndPassword(user.email, user.password);
       const uid = request.user.uid;
-      this.userCollection.doc(`User/${uid}`).get().subscribe(res => console.log(res));
+      this.userCollection.doc(uid).get().subscribe(res => console.log(res.data()));
   }
 
   async register(user: User) {
       const request = await this.auth.createUserWithEmailAndPassword(user.email, user.password);
       const uid = request.user.uid;
-      this.userCollection.doc(uid).set(user);
+      this.userCollection.doc(uid).set({
+        apelido: user.apelido,
+        email: user.email,
+        genero: user.genero,
+        nascimento: user.nascimento,
+        nome: user.nome,
+        telefone: user.telefone
+      });
   }
 
   logout() {

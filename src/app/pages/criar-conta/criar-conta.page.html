@@ -13,14 +13,14 @@
         <input type="text" [(ngModel)]="userRegister.email" name="email" placeholder="E-mail" autofocus>
         <input type="tel" [(ngModel)]="userRegister.telefone" name="telefone" placeholder="Telefone" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"placeholder="Telefone">
         <select name="genero" [(ngModel)]="userRegister.genero">
-          <option selected disabled>Genero</option>
+          <option value="" selected disabled>Genero</option>
           <option value="masculino">Masculino</option>
           <option value="feminino">Feminino</option>
           <option value="não definido pelo usuário">Prefiro não dizer</option>
         </select>
         <input type="date" [(ngModel)]="userRegister.nascimento" name="nome" placeholder="Nascimento">
         <input type="password" [(ngModel)]="userRegister.password" name="senha" placeholder="Senha">
-        <button type="submit" [disabled]="disableButton">Entrar</button>
+        <button type="submit" [disabled]="disableButton" (click)="register()">Criar</button>
         <div class="accounts">
           <button class="round-ico" [disabled]="disableButton">
             <ion-icon name="logo-google"></ion-icon>

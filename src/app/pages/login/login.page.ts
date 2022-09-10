@@ -66,7 +66,7 @@ export class LoginPage {
   }
 
   async presentToast(message: string) {
-    const toast = await this.toastCtrl.create({ message, duration: 2000 });
+    const toast = await this.toastCtrl.create({ message, duration: 2000 , color: 'danger'});
     toast.present();
   }
 }

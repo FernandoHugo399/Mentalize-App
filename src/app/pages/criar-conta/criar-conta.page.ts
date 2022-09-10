@@ -1,8 +1,6 @@
 import { LoadingController, ToastController } from '@ionic/angular';
 import { User } from 'src/app/interfaces/user';
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,9 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./criar-conta.page.scss'],
 })
 export class CriarContaPage {
-  public userRegister: User = {};
+  public userRegister: User = {genero: ''};
   public disableButton: boolean;
-  private userCollection: AngularFirestoreCollection<User>;
   private loading: any;
   constructor(
     private loadingCtrl: LoadingController,
@@ -26,7 +23,14 @@ export class CriarContaPage {
     await this.presentLoading();
 
     try {
-      await this.authService.register(this.userRegister);
+      if(!this.userRegister.apelido || !this.userRegister.email || !this.userRegister.nome
+         || !this.userRegister.nascimento || !this.userRegister.genero
+         || !this.userRegister.password || !this.userRegister.telefone) {
+          throw new Error('Preencha todos os campos!');
+         }
+
+      const user = this.filterUser(this.userRegister);
+      await this.authService.register(user);
 
     } catch (error) {
       this.presentToast(error.message);
@@ -34,19 +38,32 @@ export class CriarContaPage {
     } finally {
       this.loading.dismiss();
       this.disableButton = false;
-      this.userRegister = {};
+      this.userRegister = {genero: ''};
     }
   }
 
-  async presentLoading() {
+  private filterUser(user: User): User {
+    return {
+      apelido: user.apelido.trim(),
+      email: user.email.trim(),
+      genero: user.genero.trim(),
+      nascimento: user.nascimento.trim(),
+      nome: user.nome.trim(),
+      telefone: user.telefone.trim(),
+      password: user.password
+    };
+  }
+
+  private async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
     return this.loading.present();
   }
 
-  async presentToast(message: string) {
-    const toast = await this.toastCtrl.create({ message, duration: 2000 });
+  private async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({ message, duration: 2000, color: 'danger' });
     toast.present();
   }
+
 }
 
 
