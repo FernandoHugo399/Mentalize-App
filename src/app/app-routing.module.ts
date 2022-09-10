@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    canActivate: [LoggedGuard]
+    /* canActivate: [LoggedGuard] */
   },
   {
     path: 'configuracoes',
@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     path: 'criar-conta',
     loadChildren: () => import('./pages/criar-conta/criar-conta.module').then( m => m.CriarContaPageModule),
-    canActivate: [LoggedGuard]
+   /*  canActivate: [LoggedGuard] */
   },
   {
     path: 'perfil/:id',

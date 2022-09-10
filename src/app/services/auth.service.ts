@@ -43,18 +43,30 @@ export class AuthService {
   async googleSignIn() {
     const request = await this.auth.signInWithPopup(new GoogleAuthProvider);
     const uid = request.user.uid;
-    console.log(request);
 
     this.userCollection.doc(uid).get().subscribe(res => {
-      /* if(!res.exists) {
+      if(!res.exists) {
         this.userCollection.doc(uid).set({
-
+          email: request.user.email,
+          nome: request.user.displayName,
+          imagem: request.user.photoURL
         });
-      } */
+      }
     });
   }
 
   async githubSignIn() {
-    return this.auth.signInWithPopup(new GithubAuthProvider);
+    const request = await this.auth.signInWithPopup(new GithubAuthProvider);
+    const uid = request.user.uid;
+
+    this.userCollection.doc(uid).get().subscribe(res => {
+      if(!res.exists) {
+        this.userCollection.doc(uid).set({
+          email: request.user.email,
+          nome: request.user.displayName,
+          imagem: request.user.photoURL
+        });
+      }
+    });
   }
 }
