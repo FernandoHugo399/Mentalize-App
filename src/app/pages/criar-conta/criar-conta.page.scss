@@ -47,7 +47,7 @@
   flex-direction: column;
 }
 
-.login input {
+.login input, .login select {
   background-color: rgba(184, 184, 184, 0.5);
   margin: 5px 0;
   color: rgba(0, 0, 0, 1);
@@ -59,12 +59,12 @@
   border-radius: 27px;
 }
 
-.input::placeholder {
-  color: #ffffffa9;
-}
-
 select option:first-of-type{
   display: none;
+}
+
+.input::placeholder {
+  color: #ffffffa9;
 }
 
 button{
