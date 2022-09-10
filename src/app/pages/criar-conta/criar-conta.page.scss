@@ -7,8 +7,8 @@
 	background-size: 200% 200%;
   font-family: 'Poppins', sans-serif;
   display: flex;
-  height: 150vh;
-  min-height: 900px;
+  height: 100vh;
+  min-height: 768px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 580px;
+  height: 560px;
   padding: 15px;
   background: #fff;
   border-radius: 30px;
@@ -47,7 +47,7 @@
   flex-direction: column;
 }
 
-.login input {
+.login input, .login select {
   background-color: rgba(184, 184, 184, 0.5);
   margin: 5px 0;
   color: rgba(0, 0, 0, 1);
@@ -57,6 +57,10 @@
   height: 45px;
   outline: none;
   border-radius: 27px;
+}
+
+select option:first-of-type{
+  display: none;
 }
 
 .input::placeholder {
@@ -100,7 +104,6 @@ border-radius: 27px !important;
 }
 
 .logar {
-  margin-bottom: 5%;
   width: 300px;
   font-size: 11px;
   bottom: 0;
@@ -157,9 +160,6 @@ h3{
   align-items: center;
   font-size: 13pt;
   top: 0;
-  margin-top: 0%;
-  margin-bottom: 0%;
-  padding-bottom: 0%;
 }
 
 
