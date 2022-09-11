@@ -49,7 +49,7 @@ export class CriarContaPage {
   }
 
   async googleSignIn() {
-    this.isLogin = true;
+    this.disableButton = true;
     await this.presentLoading();
     try {
       await this.authService.googleSignIn();
@@ -57,12 +57,12 @@ export class CriarContaPage {
       this.presentToast(error.message);
     } finally {
       this.loading.dismiss();
-      this.isLogin = false;
+      this.disableButton = false;
     }
   }
 
   async githubSignIn() {
-    this.isLogin = true;
+    this.disableButton = true;
     await this.presentLoading();
     try {
       await this.authService.githubSignIn();
@@ -70,7 +70,7 @@ export class CriarContaPage {
       this.presentToast(error.message);
     } finally {
       this.loading.dismiss();
-      this.isLogin = false;
+      this.disableButton = false;
     }
   }
 
