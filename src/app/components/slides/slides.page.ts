@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SlidesPage implements OnInit {
 
   slideOpts = {
-    initialSlide: 1,
+    initialSlide: 0,
     speed: 400
   };
 

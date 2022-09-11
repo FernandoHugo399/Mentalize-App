@@ -1,25 +1,31 @@
 <ion-content>
-  <ion-slides pager="true" [options]="slideOpts">
+  <section class="slides">
 
-    <ion-slide>
-      <div class="slide1">
-        <img src="/assets/Dark Mode.png">
-      </div>
-    </ion-slide>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <div class="slide1">
+          <img src="/assets/1.png">
+        </div>
+      </ion-slide>
 
-    <ion-slide>
-      <div class="slide2">
-      <img src="/assets/2.png">
-    </div>
-    </ion-slide>
-    
-    <ion-slide>
-      <div class="slide3">
+      <ion-slide>
+        <div class="slide2">
+          <img src="/assets/2.png">
+        </div>
+      </ion-slide>
+      
+      <ion-slide>
+        <div class="slide3">
           <a routerLink="/login">
             <img src="/assets/3.png">
           </a>
-     </div>
-    </ion-slide>
+        </div>
+      </ion-slide>
+    </ion-slides>
 
-  </ion-slides>
+    <!-- Particulas -->
+    <div class="stars" ></div>
+    <div class="stars2" ></div>
+
+  </section>
 </ion-content>
