@@ -61,6 +61,19 @@ export class CriarContaPage {
     }
   }
 
+  async githubSignIn() {
+    this.isLogin = true;
+    await this.presentLoading();
+    try {
+      await this.authService.githubSignIn();
+    } catch (error) {
+      this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+      this.isLogin = false;
+    }
+  }
+
   private async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
     return this.loading.present();
