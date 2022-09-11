@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 265px;
+  width: 280px;
   height: 285px;
   padding: 15px;
   background: rgb(252, 252, 252);
@@ -45,6 +45,13 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+
+/* Escala de adaptação em multiplas telas */
+@media screen and (max-width: 280px) {
+  .login {
+    max-width: 245px;
+  }
 }
 
 .login input {
@@ -101,12 +108,19 @@ border-radius: 27px !important;
 
 .cadastro {
   margin-bottom: 5%;
-  width: 265px;
+  width: 280px;
   font-size: 11px;
   bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Escala de adaptação em multiplas telas */
+@media screen and (max-width: 280px) {
+  .cadastro {
+    max-width: 245px;
+  }
 }
 
 .accounts {
