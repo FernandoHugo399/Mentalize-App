@@ -3,7 +3,7 @@
 	height: 100vh;
 	background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8dc4fc 100%);
 	background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8ec5fc 100%);
-  	background-image: -webkit-linear-gradient( 45deg, #1e0033, #5160ff);
+  background-image: -webkit-linear-gradient( 45deg, #1e0033, #5160ff);
 	background-size: 200% 200%;
 	animation: colors 10s linear infinite;
 	overflow: hidden;
@@ -25,9 +25,9 @@
 ion-slide{
 	z-index: 1;
 	margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
 	background: none;
 }
 
