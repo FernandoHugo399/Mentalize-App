@@ -1,6 +1,6 @@
+import { Component, OnInit } from '@angular/core';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { User } from 'src/app/interfaces/user';
-import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -46,6 +46,32 @@ export class CriarContaPage {
       nome: user.nome.trim(),
       password: user.password
     };
+  }
+
+  async googleSignIn() {
+    this.isLogin = true;
+    await this.presentLoading();
+    try {
+      await this.authService.googleSignIn();
+    } catch (error) {
+      this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+      this.isLogin = false;
+    }
+  }
+
+  async githubSignIn() {
+    this.isLogin = true;
+    await this.presentLoading();
+    try {
+      await this.authService.githubSignIn();
+    } catch (error) {
+      this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+      this.isLogin = false;
+    }
   }
 
   private async presentLoading() {
