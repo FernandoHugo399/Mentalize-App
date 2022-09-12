@@ -31,21 +31,19 @@
 
     /* Background animation */
     @keyframes colors {
-	0% {
-		background-position: 0% 25%;
-	}
-
-    25%{
-        background-position: 25% 50%;
+        0% {
+            background-position: 0% 25%;
+        }
+        25%{
+            background-position: 25% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
     }
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 }
 
 ion-row {
@@ -103,7 +101,16 @@ ion-segment{
     font-family: 'Poppins';
     font-size: 10px;
     font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 0;
+    margin-top: 3%;
+    margin-bottom: 50px;
 }
 
+
+.options{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0);
+}
