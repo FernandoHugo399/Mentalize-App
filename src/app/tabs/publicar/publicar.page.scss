@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
 .center-title{
   text-align: center;
 }
@@ -14,9 +16,30 @@
     height: 100%;
     border: 1px solid black;
     margin: 3px;
+    border-radius: 30px;
   }
 }
 
 input[type=file]{
   display: none;
 }
+
+ion-card{
+  border-radius: 30px;
+}
+
+.publi{
+    font-family: 'Poppins', sans-serif;
+  --background: linear-gradient(0deg, #275fcf, #8502ff) 100% 100% no-repeat;
+}
+
+button{
+  margin-top: 2%;
+  width: 100%;
+  text-align: center;
+  background: #ffffff;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 1.5em;
+  color: #275fcf;
+  }
