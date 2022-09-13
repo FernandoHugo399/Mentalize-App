@@ -26,20 +26,23 @@ input[type=file]{
 
 ion-card{
   border-radius: 30px;
+  backdrop-filter: blur( 13.5px );
+    background: rgba( 255, 255, 255, 0.35 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 .publi{
     font-family: 'Poppins', sans-serif;
-  --background: linear-gradient(0deg, #275fcf, #8502ff) 100% 100% no-repeat;
 }
 
 button{
-  margin-top: 2%;
+  margin-top: -2%;
   width: 100%;
   text-align: center;
-  background: #ffffff;
+  background:  #275fcf;
   height: 40px;
   border-radius: 30px;
   font-size: 1.5em;
-  color: #275fcf;
+  color: #ffffff;
   }
