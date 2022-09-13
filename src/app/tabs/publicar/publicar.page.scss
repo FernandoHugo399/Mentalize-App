@@ -4,7 +4,7 @@
 
 .center-label{
   width: 100%;
-  height: 300px;
+  min-height: 300px;
 
   label{
     display: flex;
@@ -14,6 +14,11 @@
     height: 100%;
     border: 1px solid black;
     margin: 3px;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
 }
 

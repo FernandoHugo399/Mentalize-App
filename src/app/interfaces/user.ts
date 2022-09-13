@@ -9,4 +9,5 @@ export interface User {
     telefone?: string;
     nascimento?: string;
     imagem?: string;
+    file?: Blob;
 }
