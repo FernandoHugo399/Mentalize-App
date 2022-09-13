@@ -18,6 +18,19 @@
       width: 100%;
       height: auto;
     }
+
+  }
+
+  .close{
+    top: 12px;
+    right: 12px;
+    position: absolute;
+
+    ion-icon{
+      color: black;
+      font-size: 30px;
+      cursor: pointer;
+    }
   }
 }
 

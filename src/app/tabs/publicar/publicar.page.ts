@@ -34,4 +34,10 @@ export class PublicarPage implements OnInit {
       reader.readAsDataURL(arc);
     }
   }
+
+  clearPreview(): void {
+    this.imageContainer.nativeElement.setAttribute('src', '/assets/810x520.png');
+    this.publish.file = undefined;
+  }
 }
+

@@ -27,8 +27,9 @@
   <ion-card>
     <div class="center-label">
       <label for="upfile">
-        <img #imageContainer src="/assets/810x520.png"/>
+        <img #imageContainer src="/assets/810x520.png">
       </label>
+      <div class="close" *ngIf="publish.file" (click)="clearPreview()"><ion-icon name="close"></ion-icon></div>
     </div>
     <input type="file" id="upfile" name="file" (change)="readURL($event)" #inpFiles accept=".png,.svg,.jpg,.jpeg">
     <ion-card-header>
