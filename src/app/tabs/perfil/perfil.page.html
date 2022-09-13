@@ -1,14 +1,31 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="user-name">Cataldi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
 
-  <ion-toolbar color="tertiary"> 
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="" align="center"></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons> 
-    <ion-title class="user-name">[nome do usuário]</ion-title>
-  </ion-toolbar>
+  <ion-menu side="start" menuId="perfil-menu" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
 
   <ion-grid class="main-header">
     <div align="center">
@@ -70,7 +87,7 @@
       <ion-text>Nascimento</ion-text>
       <p><ion-text color="dark">19/02/2005</ion-text></p>
     </ion-label>
-  </ion-item>  
+  </ion-item>
 </ion-list>
 
 <div class="options">
@@ -99,7 +116,7 @@
   </ion-segment-button>
 </ion-segment>
 
-<div class="publi-user">   
+<div class="publi-user">
   <ion-grid>
     <ion-row>
       <ion-col>
