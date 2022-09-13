@@ -1,28 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <div class="center-title">
-      <ion-text color="tertiary"><h2>Publicar</h2></ion-text>
+    <div class="align-logo-center">
+      <img src="/assets/Logo.png" class="ion-padding">
     </div>
+
 
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-list>
-    <ion-item>
-      <!-- Escolher nível de ensino -->
-      <ion-select class="ion-padding" interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino">
-        <ion-select-option *ngFor="let nivel of nivelEnsino" [value]="nivel.nivel">{{nivel.nivel}}</ion-select-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <!-- Escolher a matéria -->
-      <ion-select class="ion-padding" interface="popover" placeholder="Selecione a matéria" *ngIf="materias">
-        <ion-select-option *ngFor="let materia of materias" [value]="materia.materia">{{materia.materia}}</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+<ion-content [fullscreen]="true" class="ion-padding publi">
 
   <ion-card>
     <div class="center-label">
@@ -42,7 +28,24 @@
         <ion-label position="floating">Descrição</ion-label>
         <ion-textarea></ion-textarea>
       </ion-item>
+
+      <ion-list>
+        <ion-item>
+          <!-- Escolher nível de ensino -->
+          <ion-select class="ion-padding" interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino">
+            <ion-select-option *ngFor="let nivel of nivelEnsino" [value]="nivel.nivel">{{nivel.nivel}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <!-- Escolher a matéria -->
+          <ion-select class="ion-padding" interface="popover" placeholder="Selecione a matéria" *ngIf="materias">
+            <ion-select-option *ngFor="let materia of materias" [value]="materia.materia">{{materia.materia}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      
     </ion-card-content>
   </ion-card>
-  <ion-button expand="block" class="publicar">Publicar</ion-button>
+  <button expand="block" class="publicar">Publicar</button>
 </ion-content>
