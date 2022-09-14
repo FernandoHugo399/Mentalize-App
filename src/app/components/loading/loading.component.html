@@ -1,0 +1,9 @@
+
+<div class="div-spinner">
+  <mat-progress-spinner
+    [diameter]="40"
+    class="spinner"
+    [mode]="'indeterminate'"
+    *ngIf="loading$ | async"
+  ></mat-progress-spinner>
+</div>
