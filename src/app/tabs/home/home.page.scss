@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
+.feed{
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .translucent {
     -webkit-backdrop-filter: blur( 13.5px );
     text-align: justify;
@@ -11,10 +16,33 @@
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
-ion-card img {
-    width: 100vw;
-}
+ion-card {
+  .container-imagem{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
+    ion-img {
+    width: 100%;
+    background: rgb(219, 219, 219);
+    border: 1px solid rgba(255, 255, 255, 0.685);
+    }
+  }
+
+  ion-card-header{
+    padding-top: 20px;
+    padding-bottom: 6px;
+  }
+
+  ion-badge{
+    margin-top: 8px;
+    margin-right: 12px;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+    --padding-left: 15px;
+    --padding-right: 15px;
+  }
+}
 .actions-btn {
     ion-button {
         border-radius: 50px;
