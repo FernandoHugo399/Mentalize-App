@@ -1,9 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
 /* General */
-
-.search{
-    --background: linear-gradient(0deg, #275fcf, #8502ff) 100% 100% no-repeat;
-}
-
 ion-card {
     -webkit-backdrop-filter: blur( 4px );
     background: rgba( 255, 255, 255, 0.2 );
@@ -14,6 +11,30 @@ ion-card {
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.search{
+    --background: linear-gradient(0deg, #253b68, #3a7cdf) 100% 100% no-repeat;
+    font-family: 'Poppins', sans-serif;
+}
+
 ion-list {
     background: none;
+}
+
+.header {
+    padding: 0;
+    box-shadow: 0 8px 32px 0 rgba(13, 18, 110, 0.301);
+    color: #fff;
+    ion-searchbar {
+        position: relative;
+        padding: 5% 3%;
+        border-radius: 1em;
+    }
+}
+
+.divider {
+    margin: 5px;
+    padding: 5px;
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
 }

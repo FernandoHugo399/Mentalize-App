@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="header">
     <ion-searchbar type="search" placeholder="Pesquise aqui"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -7,11 +7,11 @@
 <ion-content [fullscreen]="true" class="search">
     <ion-list>
       <!-- Filtro grau de ensino -->
-      <ion-item-divider class="divider">
+      <div class="divider">
         <ion-label>
-          Filtro por grau
+          Grau de Ensino
         </ion-label>
-      </ion-item-divider>
+      </div>
 
       <div *ngIf="nivelEnsino"> <!-- Caso exista valores na váriavel nivel ensino, exiba: -->
         <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel}}}}"> <!-- Para cada item na variavel nivel ensino, exiba:  -->
@@ -24,11 +24,11 @@
       </div>
 
       <!-- Filtro por matérias -->
-      <ion-item-divider class="divider">
+      <div class="divider">
         <ion-label>
-          Filtro por materias
+          Matérias
         </ion-label>
-      </ion-item-divider>
+      </div>
 
       <div *ngIf="materias"> <!-- caso exista valores na variável matéria, exiba: -->
         <ion-card *ngFor="let materia of materias" routerLink="/materia/{{materia.materia}}"> <!-- para cada item na variável, exiba: -->
