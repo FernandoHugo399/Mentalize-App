@@ -10,17 +10,17 @@
   <section class="feed">
     <ion-list>
       <ion-virtual-scroll [items]="publish" *ngIf="publish;else skeleton">
-          <ion-card *virtualItem="let publish;">
+          <ion-card *virtualItem="let pub;">
             <div class="container-imagem">
-              <ion-img src="https://storage.googleapis.com/mentalize-361022.appspot.com/publish/{{publish.imagem}}"></ion-img>
+              <ion-img src="https://storage.googleapis.com/mentalize-361022.appspot.com/publish/{{pub.imagem}}"></ion-img>
             </div>
             <ion-card-header>
-                <ion-card-title>{{publish.titulo}}</ion-card-title>
+                <ion-card-title><ion-label><h1>{{pub.titulo}}</h1></ion-label></ion-card-title>
               </ion-card-header>
               <ion-card-content>
-                  <h2>{{publish.descricao}}</h2>
-                  <ion-badge color="medium">{{publish.materia}}</ion-badge>
-                  <ion-badge color="medium">{{publish.nivelEnsino}}</ion-badge>
+                  <h2>{{pub.descricao}}</h2>
+                  <ion-badge color="medium">{{pub.materia}}</ion-badge>
+                  <ion-badge color="medium">{{pub.nivelEnsino}}</ion-badge>
               </ion-card-content>
 
                 <div class="actions-btn">

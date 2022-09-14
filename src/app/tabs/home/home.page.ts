@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Publish } from 'src/app/interfaces/publish';
 import { PublishService } from 'src/app/services/publish.service';
 
@@ -7,12 +7,12 @@ import { PublishService } from 'src/app/services/publish.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage {
+export class HomePage implements OnInit{
   public publish: Publish[];
 
   constructor(private publishService: PublishService) { }
 
-  async ionViewWillEnter() {
+  async ngOnInit() {
     this.publish = await this.getPublish();
   }
 

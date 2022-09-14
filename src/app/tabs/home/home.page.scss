@@ -16,16 +16,12 @@
 }
 
 ion-card {
-  .container-imagem{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
+    margin-bottom: 30px;
     ion-img {
     width: 100%;
     background: rgb(219, 219, 219);
     }
-  }
+
 
   ion-card-header{
     padding-top: 20px;

@@ -13,10 +13,10 @@
         <input type="password" [(ngModel)]="userRegister.password" name="senha" placeholder="Senha">
         <button type="submit" [disabled]="disableButton" (click)="register()">Criar</button>
         <div class="accounts">
-          <button class="round-ico" [disabled]="disableButton">
+          <button class="round-ico" [disabled]="disableButton" (click)="googleSignIn()">
             <ion-icon name="logo-google"></ion-icon>
           </button>
-          <button class="round-ico" [disabled]="disableButton">
+          <button class="round-ico" [disabled]="disableButton" (click)="githubSignIn()">
             <ion-icon name="logo-github"></ion-icon>
           </button>
         </div>
