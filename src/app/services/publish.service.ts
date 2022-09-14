@@ -1,7 +1,6 @@
+import { Publish } from './../interfaces/publish';
 import { AuthService } from 'src/app/services/auth.service';
 import { Injectable } from '@angular/core';
-import { Publish } from '../interfaces/publish';
-import { map} from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 
@@ -19,15 +18,18 @@ export class PublishService {
     this.publishCollection = this.firestore.collection<Publish>('Publish');
   }
 
-  getPublishs() {
-    return this.publishCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
+  async getPublishs() {
+    const listPublish: Publish[] = [];
 
-          return { id, ...data };
-        }))
-    );
+    const publish = await this.publishCollection.ref.orderBy('dataPublicacao').get();
+    publish.docs.map((e) => {
+      const data = e.data();
+      const uid = e.id;
+
+      listPublish.push({ uid, ...data });
+    });
+
+    return listPublish;
   }
 
   async addPublish(publish: Publish, file: File) {

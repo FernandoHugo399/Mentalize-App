@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { App } from '@capacitor/app';
-import { Platform, AlertController, IonRouterOutlet } from '@ionic/angular';
-import { Location } from '@angular/common';
+import { Publish } from 'src/app/interfaces/publish';
+import { PublishService } from 'src/app/services/publish.service';
 
 @Component({
   selector: 'app-home',
@@ -10,5 +8,15 @@ import { Location } from '@angular/common';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
+  public publish: Publish[];
 
+  constructor(private publishService: PublishService) { }
+
+  async ionViewWillEnter() {
+    this.publish = await this.getPublish();
+  }
+
+  async getPublish() {
+    return await this.publishService.getPublishs();
+  }
 }

@@ -10,4 +10,5 @@ export interface Publish{
   nivelEnsino?: string;
   id_usuario?: string;
   file?: File;
+  uid?: string;
 }
