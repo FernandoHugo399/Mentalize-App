@@ -58,6 +58,10 @@ export class PublicarPage implements OnInit {
         throw new Error('Coloque uma imagem');
       }
 
+      if (file.size > 4 * 1024 * 1024) {
+        throw new Error('A imagem é muito pesada - Max: 4Mb');
+      }
+
       const filterPublish = this.filterPublish(this.publish);
       await this.publishService.addPublish(filterPublish, this.publish.file);
       this.successToastr();
