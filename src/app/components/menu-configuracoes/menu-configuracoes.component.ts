@@ -1,6 +1,8 @@
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController, MenuController, ToastController } from '@ionic/angular';
+import { filter } from 'rxjs/operators';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-configuracoes',
@@ -12,9 +14,13 @@ export class MenuConfiguracoesComponent implements OnInit {
   public darkMode: boolean;
   // eslint-disable-next-line @typescript-eslint/ban-types
   constructor(
+    private router: Router,
     private alertController: AlertController,
-    private authService: AuthService
-    ) { }
+    private authService: AuthService,
+    private menuController: MenuController
+    ) {
+      this.routerEvent();
+    }
 
   ngOnInit() {
     if(document.body.getAttribute('color-theme') === 'dark'){
@@ -92,5 +98,14 @@ export class MenuConfiguracoesComponent implements OnInit {
     });
 
     await alert.present();
+  }
+
+  private routerEvent(){
+    this.router.events.pipe( filter( ( event: NavigationEnd ) => ( event instanceof NavigationEnd )))
+    .subscribe((event: NavigationEnd)=>{
+      if(this.menuController.isOpen()){
+        this.menuController.close();
+      }
+    });
   }
 }
