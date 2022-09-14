@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Injectable } from '@angular/core';
 import { Publish } from '../interfaces/publish';
 import { map} from 'rxjs/operators';
@@ -12,7 +13,8 @@ export class PublishService {
 
   constructor(
     private firestore: AngularFirestore,
-    private firestorage: AngularFireStorage
+    private firestorage: AngularFireStorage,
+    private authService: AuthService
     ) {
     this.publishCollection = this.firestore.collection<Publish>('Publish');
   }
@@ -29,6 +31,7 @@ export class PublishService {
   }
 
   async addPublish(publish: Publish, file: File) {
+    this.authService.getAuth().user.subscribe( res => publish.id_usuario = res.uid);
     await this.firestorage.upload('/publish/' + publish.imagem, file);
     await this.publishCollection.add(publish);
   }

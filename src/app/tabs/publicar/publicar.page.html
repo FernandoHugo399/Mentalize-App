@@ -45,5 +45,5 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="block" class="publicar" (click)="sendPublish()">Publicar</ion-button>
+  <ion-button expand="block" class="publicar" (click)="sendPublish()" [disabled]="disableButton">Publicar</ion-button>
 </ion-content>

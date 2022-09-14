@@ -15,7 +15,7 @@ export class PublicarPage implements OnInit {
   public nivelEnsino: INivelEnsino[];
   public materias: IMateria[];
   public publish: Publish = {};
-
+  public disableButton: boolean;
   constructor(
     private dataService: DataService,
     private publishService: PublishService,
@@ -47,6 +47,7 @@ export class PublicarPage implements OnInit {
   }
 
   async sendPublish() {
+    this.disableButton = true;
     const { titulo, descricao, materia, nivelEnsino, file } = this.publish;
     try {
       if(!titulo || !descricao || !materia || !nivelEnsino){
@@ -63,7 +64,9 @@ export class PublicarPage implements OnInit {
     } catch (error) {
       this.errorToastr(error.message);
     } finally {
+      this.imageContainer.nativeElement.setAttribute('src', '/assets/810x520.png');
       this.publish = {};
+      this.disableButton = false;
     }
   }
 
