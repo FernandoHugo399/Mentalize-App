@@ -11,7 +11,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CriarContaPage {
   public userRegister: User = {genero: ''};
   public disableButton: boolean;
-  private loading: any;
   constructor(
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
@@ -20,7 +19,6 @@ export class CriarContaPage {
 
   async register() {
     this.disableButton = true;
-    await this.presentLoading();
 
     try {
       if(!this.userRegister.email || !this.userRegister.nome || !this.userRegister.password) {
@@ -34,7 +32,6 @@ export class CriarContaPage {
       this.presentToast(error.message);
 
     } finally {
-      this.loading.dismiss();
       this.disableButton = false;
       this.userRegister = {genero: ''};
     }
@@ -42,34 +39,26 @@ export class CriarContaPage {
 
   async googleSignIn() {
     this.disableButton = true;
-    await this.presentLoading();
     try {
       await this.authService.googleSignIn();
     } catch (error) {
       this.presentToast(error.message);
     } finally {
-      this.loading.dismiss();
       this.disableButton = false;
     }
   }
 
   async githubSignIn() {
     this.disableButton = true;
-    await this.presentLoading();
     try {
       await this.authService.githubSignIn();
     } catch (error) {
       this.presentToast(error.message);
     } finally {
-      this.loading.dismiss();
       this.disableButton = false;
     }
   }
 
-  private async presentLoading() {
-    this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
-    return this.loading.present();
-  }
 
   private async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000, color: 'danger' });
