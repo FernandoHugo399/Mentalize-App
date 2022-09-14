@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Publish } from 'src/app/interfaces/publish';
 import { DataService, IMateria, INivelEnsino } from 'src/app/services/data.service';
+import { PublishService } from 'src/app/services/publish.service';
 
 @Component({
   selector: 'app-tab3',
@@ -14,7 +15,7 @@ export class PublicarPage implements OnInit {
   public materias: IMateria[];
   public publish: Publish = {};
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private publishService: PublishService) {
     this.nivelEnsino = dataService.nivelEnsino;
     this.materias = dataService.materias;
   }
@@ -38,6 +39,10 @@ export class PublicarPage implements OnInit {
   clearPreview(): void {
     this.imageContainer.nativeElement.setAttribute('src', '/assets/810x520.png');
     this.publish.file = undefined;
+  }
+
+  sendPublish() {
+    this.publishService.addPublish(this.publish);
   }
 }
 

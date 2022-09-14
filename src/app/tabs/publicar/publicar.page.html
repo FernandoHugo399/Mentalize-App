@@ -11,14 +11,14 @@
   <ion-list>
     <ion-item>
       <!-- Escolher nível de ensino -->
-      <ion-select class="ion-padding" interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino">
+      <ion-select class="ion-padding" interface="popover" placeholder="Selecione o grau" *ngIf="nivelEnsino" [(ngModel)]="publish.nivelEnsino">
         <ion-select-option *ngFor="let nivel of nivelEnsino" [value]="nivel.nivel">{{nivel.nivel}}</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <!-- Escolher a matéria -->
-      <ion-select class="ion-padding" interface="popover" placeholder="Selecione a matéria" *ngIf="materias">
+      <ion-select class="ion-padding" interface="popover" placeholder="Selecione a matéria" *ngIf="materias" [(ngModel)]="publish.materia">
         <ion-select-option *ngFor="let materia of materias" [value]="materia.materia">{{materia.materia}}</ion-select-option>
       </ion-select>
     </ion-item>
@@ -34,16 +34,16 @@
     <input type="file" id="upfile" name="file" (change)="readURL($event)" #inpFiles accept=".png,.svg,.jpg,.jpeg">
     <ion-card-header>
       <ion-item>
-        <ion-label position="floating">Nome</ion-label>
-        <ion-input></ion-input>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input [(ngModel)]="publish.titulo"></ion-input>
       </ion-item>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
         <ion-label position="floating">Descrição</ion-label>
-        <ion-textarea></ion-textarea>
+        <ion-textarea [(ngModel)]="publish.descricao"></ion-textarea>
       </ion-item>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="block" class="publicar">Publicar</ion-button>
+  <ion-button expand="block" class="publicar" (click)="sendPublish()">Publicar</ion-button>
 </ion-content>
