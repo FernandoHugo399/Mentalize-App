@@ -29,7 +29,7 @@ export class PublishService {
       listPublish.push({ uid, ...data });
     });
 
-    return listPublish;
+    return listPublish.reverse();
   }
 
   async addPublish(publish: Publish, file: File) {

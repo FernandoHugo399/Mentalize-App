@@ -19,4 +19,9 @@ export class HomePage implements OnInit{
   async getPublish() {
     return await this.publishService.getPublishs();
   }
+
+  async doRefresh(event: any) {
+    this.publish = await this.getPublish();
+    event.target.complete();
+  }
 }

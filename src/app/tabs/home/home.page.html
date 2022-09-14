@@ -8,6 +8,9 @@
 
 <ion-content class="ion-padding" [fullscreen]="true">
   <section class="feed">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
     <ion-list>
       <ion-virtual-scroll [items]="publish" *ngIf="publish;else skeleton">
           <ion-card *virtualItem="let pub;">
