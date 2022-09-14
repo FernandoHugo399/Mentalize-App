@@ -12,10 +12,11 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingComponent } from './components/loading/loading.component';
 import { NetworkInterceptor } from './components/loading/network.interceptor';
+import { MenuConfiguracoesComponent } from './components/menu-configuracoes/menu-configuracoes.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoadingComponent],
+  declarations: [AppComponent, LoadingComponent, MenuConfiguracoesComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -25,7 +26,7 @@ import { NetworkInterceptor } from './components/loading/network.interceptor';
     AngularFireAuthModule,
     AngularFireStorageModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [
     {

@@ -48,17 +48,17 @@
 
 ion-row {
     margin-top: -55px;
-    ion-col { 
+    ion-col {
         justify-content: center;
-        align-items: center; 
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
         ion-item {
-            width: 94%;           
+            width: 94%;
             margin: auto;
             border: 1px solid #f4f5f8;
             box-shadow: 1px #222428;
-            border-radius: 5px;           
+            border-radius: 5px;
             ion-label {
                 font-size: 14px;
                 font-weight: bold;
@@ -83,7 +83,7 @@ ion-list {
             p {
                 margin-top: 1%;
                 font-size: 15px;
-                font-weight: normal;                
+                font-weight: normal;
             }
         }
     }
@@ -103,14 +103,4 @@ ion-segment{
     font-weight: bold;
     margin-top: 3%;
     margin-bottom: 50px;
-}
-
-
-.options{
-    margin-top: 3%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(255, 255, 255, 0);
 }

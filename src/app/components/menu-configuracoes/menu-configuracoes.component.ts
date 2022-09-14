@@ -1,20 +1,19 @@
-import { MessageService } from './../../services/message.service';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { Message } from 'src/app/interfaces/message';
-import { ActionSheetController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-configuracoes',
-  templateUrl: './configuracoes.page.html',
-  styleUrls: ['./configuracoes.page.scss'],
+  selector: 'app-menu-configuracoes',
+  templateUrl: './menu-configuracoes.component.html',
+  styleUrls: ['./menu-configuracoes.component.scss'],
 })
-export class ConfiguracoesPage implements OnInit {
+export class MenuConfiguracoesComponent implements OnInit {
+
   public darkMode: boolean;
   // eslint-disable-next-line @typescript-eslint/ban-types
   constructor(
     private alertController: AlertController,
-    private toastController: ToastController,
+    private authService: AuthService
     ) { }
 
   ngOnInit() {
@@ -23,6 +22,10 @@ export class ConfiguracoesPage implements OnInit {
     } else{
       this.darkMode = false;
     }
+  }
+
+  public logout(){
+    this.authService.logout();
   }
 
   public toggleTheme(event: string){

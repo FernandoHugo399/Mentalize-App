@@ -12,12 +12,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    /* canActivate: [LoggedGuard] */
-  },
-  {
-    path: 'configuracoes',
-    loadChildren: () => import('./pages/configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule),
-    canActivate: [AuthGuard]
+    canActivate: [LoggedGuard]
   },
   {
     path: 'contate-nos',
@@ -27,15 +22,17 @@ const routes: Routes = [
   {
     path: 'criar-conta',
     loadChildren: () => import('./pages/criar-conta/criar-conta.module').then( m => m.CriarContaPageModule),
-   /*  canActivate: [LoggedGuard] */
+    canActivate: [LoggedGuard]
   },
   {
     path: 'perfil/:id',
-    loadChildren: () => import('./pages/perfil-outro-usuario/perfil-outro-usuario.module').then( m => m.PerfilOutroUsuarioPageModule)
+    loadChildren: () => import('./pages/perfil-outro-usuario/perfil-outro-usuario.module').then( m => m.PerfilOutroUsuarioPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'slides',
-    loadChildren: () => import('./components/slides/slides.module').then( m => m.SlidesPageModule)
+    loadChildren: () => import('./components/slides/slides.module').then( m => m.SlidesPageModule),
+    canActivate: [AuthGuard]
   },
 
 
