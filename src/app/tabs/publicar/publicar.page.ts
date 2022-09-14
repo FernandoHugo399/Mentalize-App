@@ -1,3 +1,4 @@
+import { ToastController } from '@ionic/angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Publish } from 'src/app/interfaces/publish';
 import { DataService, IMateria, INivelEnsino } from 'src/app/services/data.service';
@@ -15,7 +16,11 @@ export class PublicarPage implements OnInit {
   public materias: IMateria[];
   public publish: Publish = {};
 
-  constructor(private dataService: DataService, private publishService: PublishService) {
+  constructor(
+    private dataService: DataService,
+    private publishService: PublishService,
+    private toastController: ToastController
+    ) {
     this.nivelEnsino = dataService.nivelEnsino;
     this.materias = dataService.materias;
   }
@@ -41,8 +46,56 @@ export class PublicarPage implements OnInit {
     this.publish.file = undefined;
   }
 
-  sendPublish() {
-    this.publishService.addPublish(this.publish);
+  async sendPublish() {
+    const { titulo, descricao, materia, nivelEnsino, file } = this.publish;
+    try {
+      if(!titulo || !descricao || !materia || !nivelEnsino){
+        throw new Error('Preencha todos os campos');
+      }
+
+      if(!file){
+        throw new Error('Coloque uma imagem');
+      }
+
+      const filterPublish = this.filterPublish(this.publish);
+      await this.publishService.addPublish(filterPublish, this.publish.file);
+      this.successToastr();
+    } catch (error) {
+      this.errorToastr(error.message);
+    } finally {
+      this.publish = {};
+    }
+  }
+
+  private filterPublish(publish: Publish): Publish {
+    const format = publish.file.name.split('.');
+
+    return{
+      titulo: publish.titulo.trim(),
+      descricao: publish.descricao.trim(),
+      materia: publish.materia,
+      nivelEnsino: publish.nivelEnsino,
+      imagem: Date.now() + format[0],
+      dataPublicacao: Date.now().toString()
+    };
+  }
+
+  private async errorToastr(message: string){
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      color: 'danger'
+    });
+    toast.present();
+  }
+
+  private async successToastr() {
+    const toast = await this.toastController.create({
+      message: 'Publicação enviada com sucesso!',
+      duration: 2000,
+      color: 'success'
+    });
+    toast.present();
   }
 }
 

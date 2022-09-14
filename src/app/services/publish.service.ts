@@ -28,28 +28,8 @@ export class PublishService {
     );
   }
 
-  async addPublish(publish: Publish) {
-    const filterPublish = this.filterPublish(publish);
-
-    try {
-      await this.firestorage.upload('/publish/' + filterPublish.imagem, publish.file);
-
-      await this.publishCollection.add(filterPublish);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  private filterPublish(publish: Publish): Publish {
-    const format = publish.file.name.split('.');
-
-    return{
-      titulo: publish.titulo.trim(),
-      descricao: publish.descricao.trim(),
-      materia: publish.materia,
-      nivelEnsino: publish.nivelEnsino,
-      imagem: Date.now() + format[0],
-      dataPublicacao: Date.now().toString()
-    };
+  async addPublish(publish: Publish, file: File) {
+    await this.firestorage.upload('/publish/' + publish.imagem, file);
+    await this.publishCollection.add(publish);
   }
 }

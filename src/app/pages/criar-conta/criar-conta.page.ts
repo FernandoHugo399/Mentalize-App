@@ -40,14 +40,6 @@ export class CriarContaPage {
     }
   }
 
-  private filterUser(user: User): User {
-    return {
-      email: user.email.trim(),
-      nome: user.nome.trim(),
-      password: user.password
-    };
-  }
-
   async googleSignIn() {
     this.disableButton = true;
     await this.presentLoading();
@@ -84,6 +76,13 @@ export class CriarContaPage {
     toast.present();
   }
 
+  private filterUser(user: User): User {
+    return {
+      email: user.email.trim(),
+      nome: user.nome.trim(),
+      password: user.password
+    };
+  }
 }
 
 
