@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { App } from '@capacitor/app';
-import { AlertController, Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular';
 import { filter } from 'rxjs/operators';
 import { SplashScreen } from '@capacitor/splash-screen';
 
@@ -16,7 +16,6 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private router: Router,
-    private alertController: AlertController,
     private location: Location,
   )
   {
