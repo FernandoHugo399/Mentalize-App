@@ -2,7 +2,8 @@ import { Publish } from './../../interfaces/publish';
 import { DataService, INivelEnsino } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { IMateria } from 'src/app/services/data.service';
-import { SearchbarCustomEvent, ToastController } from '@ionic/angular';
+import { SearchbarCustomEvent } from '@ionic/angular';
+import { PublishService } from 'src/app/services/publish.service';
 
 @Component({
   selector: 'app-pesquisar',
@@ -16,6 +17,14 @@ export class PesquisarPage implements OnInit {
   public queryText = '';
   public publishes: Publish[];
 
+  constructor(
+    private dataService: DataService,
+    private publishService: PublishService
+  ) {
+    this.nivelEnsino = dataService.nivelEnsino;
+    this.materias = dataService.materias;
+  }
+
   public filterInstitutions(_event: Event){
     const event = _event as SearchbarCustomEvent;
     const query = event.target.value;
@@ -28,12 +37,9 @@ export class PesquisarPage implements OnInit {
     }
   }
 
-  constructor(private dataService: DataService) {
-    this.nivelEnsino = dataService.nivelEnsino;
-    this.materias = dataService.materias;
-  }
-  ngOnInit(): void {
+  async ngOnInit() {
     this.nivelEnsino = this.dataService.nivelEnsino;
     this.materias = this.dataService.materias;
+    this.allPublishes = await this.publishService.getPublishs();
   }
 }

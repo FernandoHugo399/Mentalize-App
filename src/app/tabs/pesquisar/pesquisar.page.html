@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="search">
-    <ion-list>
+    <ion-list *ngIf="!publishes">
       <!-- Filtro grau de ensino -->
       <div class="divider">
         <ion-label>
