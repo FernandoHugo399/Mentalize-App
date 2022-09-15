@@ -11,9 +11,8 @@
     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
-    <ion-list>
-      <ion-virtual-scroll [items]="publish" *ngIf="publish;else skeleton">
-          <ion-card *virtualItem="let pub;">
+    <ion-list *ngIf="publish;else skeleton">
+          <ion-card *ngFor="let pub of publish">
             <div class="container-imagem">
               <img src="https://storage.googleapis.com/mentalize-361022.appspot.com/publish/{{pub.imagem}}">
             </div>
@@ -32,7 +31,6 @@
                   <ion-button><ion-icon name="megaphone-outline" slot="start"></ion-icon>Denunciar</ion-button>
                 </div>
               </ion-card>
-      </ion-virtual-scroll>
     </ion-list>
   </section>
 </ion-content>
