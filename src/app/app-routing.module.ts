@@ -34,6 +34,12 @@ const routes: Routes = [
     loadChildren: () => import('./components/slides/slides.module').then( m => m.SlidesPageModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'materia/:materia',
+    loadChildren: () => import('./pages/filtro-materias/filtro-materias.module').then( m => m.FiltroMateriasPageModule),
+    canActivate: [AuthGuard]
+  },
+
 
 
 
