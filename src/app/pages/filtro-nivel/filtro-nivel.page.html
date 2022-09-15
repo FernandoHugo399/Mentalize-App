@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons>
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+      <ion-title>{{this.nivel}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <section class="feed">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list *ngIf="publish;else skeleton">
+          <ion-card *ngFor="let pub of publish">
+            <div class="container-imagem">
+              <img src="https://storage.googleapis.com/mentalize-361022.appspot.com/publish/{{pub.imagem}}">
+            </div>
+            <ion-card-header>
+                <ion-card-title><ion-label><h1>{{pub.titulo}}</h1></ion-label></ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                  <h2>{{pub.descricao}}</h2>
+                  <ion-badge color="medium">{{pub.materia}}</ion-badge>
+                  <ion-badge color="medium">{{pub.nivelEnsino}}</ion-badge>
+              </ion-card-content>
+
+                <div class="actions-btn">
+                  <ion-button><ion-icon name="download-outline" slot="start"></ion-icon>Download</ion-button>
+                  <ion-button><ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon>Comentar</ion-button>
+                  <ion-button><ion-icon name="megaphone-outline" slot="start"></ion-icon>Denunciar</ion-button>
+                </div>
+              </ion-card>
+    </ion-list>
+  </section>
+</ion-content>
+
+<ng-template #skeleton>
+  <ion-card>
+    <div class="container-imagem"><ion-skeleton-text [animated]="true" style="width: 100%; height: 280px;"></ion-skeleton-text></div>
+    <ion-card-header>
+      <ion-card-title><ion-skeleton-text [animated]="true" style="width: 60%; height: 30px;"></ion-skeleton-text></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-skeleton-text [animated]="true" style="width: 100%;"></ion-skeleton-text>
+      <ion-skeleton-text [animated]="true" style="width: 100%;"></ion-skeleton-text>
+      <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <div class="container-imagem"><ion-skeleton-text [animated]="true" style="width: 100%; height: 280px;"></ion-skeleton-text></div>
+    <ion-card-header>
+      <ion-card-title><ion-skeleton-text [animated]="true" style="width: 60%; height: 30px;"></ion-skeleton-text></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-skeleton-text [animated]="true" style="width: 100%;"></ion-skeleton-text>
+      <ion-skeleton-text [animated]="true" style="width: 100%;"></ion-skeleton-text>
+      <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+    </ion-card-content>
+  </ion-card>
+</ng-template>

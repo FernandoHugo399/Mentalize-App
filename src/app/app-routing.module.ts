@@ -39,6 +39,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/filtro-materias/filtro-materias.module').then( m => m.FiltroMateriasPageModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'grau/:nivel',
+    loadChildren: () => import('./pages/filtro-nivel/filtro-nivel.module').then( m => m.FiltroNivelPageModule),
+    canActivate: [AuthGuard]
+  },
+
 
 
 
