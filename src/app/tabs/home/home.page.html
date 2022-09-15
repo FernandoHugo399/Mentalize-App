@@ -4,7 +4,7 @@
         <img src="/assets/Logo.png" class="ion-padding">
       </div>
   </ion-toolbar>
-</ion-header>
+</ion-header> 
 
 <ion-content class="ion-padding" [fullscreen]="true">
   <section class="feed">
@@ -26,9 +26,19 @@
               </ion-card-content>
 
                 <div class="actions-btn">
-                  <ion-button><ion-icon name="download-outline" slot="start"></ion-icon>Download</ion-button>
-                  <ion-button><ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon>Comentar</ion-button>
-                  <ion-button><ion-icon name="megaphone-outline" slot="start"></ion-icon>Denunciar</ion-button>
+                  <a href="#" target="_blank"><ion-icon name="chatbubble-outline" class="comentario" slot="start"></ion-icon></a>
+                  <a href="#" target="_blank"><ion-icon name="happy-outline" class="curtida" slot="start"></ion-icon></a>
+
+                  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="menu">
+                    <ion-fab-button>
+                      <ion-icon name="construct-outline"></ion-icon>
+                    </ion-fab-button>
+                    <ion-fab-list side="top">
+                     <a href="#" target="_blank"> <ion-fab-button><ion-icon name="warning"></ion-icon></ion-fab-button></a>
+                     <a href="#" target="_blank"> <ion-fab-button><ion-icon name="download-outline"></ion-icon></ion-fab-button></a>
+                     <a href="#" target="_blank"> <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button></a>
+                    </ion-fab-list>
+                  </ion-fab>
                 </div>
               </ion-card>
     </ion-list>
