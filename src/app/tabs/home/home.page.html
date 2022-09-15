@@ -15,7 +15,7 @@
       <ion-virtual-scroll [items]="publish" *ngIf="publish;else skeleton">
           <ion-card *virtualItem="let pub;">
             <div class="container-imagem">
-              <ion-img src="https://storage.googleapis.com/mentalize-361022.appspot.com/publish/{{pub.imagem}}"></ion-img>
+              <img src="https://storage.googleapis.com/mentalize-361022.appspot.com/publish/{{pub.imagem}}">
             </div>
             <ion-card-header>
                 <ion-card-title><ion-label><h1>{{pub.titulo}}</h1></ion-label></ion-card-title>
