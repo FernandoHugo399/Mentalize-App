@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="search">
-    <ion-list *ngIf="!publishes">
+    <ion-list *ngIf="!publishes; else hasPublishes">
       <!-- Filtro grau de ensino -->
       <div class="divider">
         <ion-label>
@@ -43,5 +43,40 @@
         </ion-card>
       </div>
     </ion-list>
-
 </ion-content>
+
+<ng-template #hasPublishes>
+  <section class="feed">
+    <ion-list>
+          <ion-card *ngFor="let pub of publishes">
+            <div class="container-imagem">
+              <img src="https://storage.googleapis.com/mentalize-361022.appspot.com/publish/{{pub.imagem}}">
+            </div>
+            <ion-card-header>
+                <ion-card-title><ion-label><h1>{{pub.titulo}}</h1></ion-label></ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                  <h2>{{pub.descricao}}</h2>
+                  <ion-badge color="medium">{{pub.materia}}</ion-badge>
+                  <ion-badge color="medium">{{pub.nivelEnsino}}</ion-badge>
+              </ion-card-content>
+
+                <div class="actions-btn">
+                  <a href="#" target="_blank"><ion-icon name="chatbubble-outline" class="comentario" slot="start"></ion-icon></a>
+                  <a href="#" target="_blank"><ion-icon name="happy-outline" class="curtida" slot="start"></ion-icon></a>
+
+                  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="menu">
+                    <ion-fab-button>
+                      <ion-icon name="construct-outline"></ion-icon>
+                    </ion-fab-button>
+                    <ion-fab-list side="top">
+                     <a href="#" target="_blank"> <ion-fab-button><ion-icon name="warning"></ion-icon></ion-fab-button></a>
+                     <a href="#" target="_blank"> <ion-fab-button><ion-icon name="download-outline"></ion-icon></ion-fab-button></a>
+                     <a href="#" target="_blank"> <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button></a>
+                    </ion-fab-list>
+                  </ion-fab>
+                </div>
+              </ion-card>
+    </ion-list>
+  </section>
+</ng-template>

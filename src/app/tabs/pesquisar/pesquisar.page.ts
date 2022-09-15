@@ -33,7 +33,7 @@ export class PesquisarPage implements OnInit {
       this.publishes = this.allPublishes
       .filter((publishes)=> publishes.titulo.toLowerCase().indexOf(query.toLowerCase()) > -1 );
     } else {
-      this.publishes = this.allPublishes;
+      this.publishes = undefined;
     }
   }
 
