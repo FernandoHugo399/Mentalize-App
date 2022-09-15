@@ -14,7 +14,7 @@
       </div>
 
       <div *ngIf="nivelEnsino"> <!-- Caso exista valores na váriavel nivel ensino, exiba: -->
-        <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel}}}}"> <!-- Para cada item na variavel nivel ensino, exiba:  -->
+        <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel.nivel}}"> <!-- Para cada item na variavel nivel ensino, exiba:  -->
           <ion-item>
             <ion-icon [name]="nivel.icone" slot="start"></ion-icon>
             <ion-label>{{nivel.nivel}}</ion-label>
@@ -41,6 +41,6 @@
       </div>
     </ion-list>
 
-    
+
 
 </ion-content>
