@@ -8,11 +8,11 @@
     height: 25vh;
     width: 120%;
     background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8dc4fc 100%);
-	background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8ec5fc 100%);
+	  background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8ec5fc 100%);
     background-image: -webkit-linear-gradient( 45deg, #1e0033, #5160ff);
-	background-size: 200% 200%;
-	animation: colors 6s linear infinite;
-	overflow: hidden;
+	  background-size: 200% 200%;
+	  animation: colors 6s linear infinite;
+  	overflow: hidden;
     box-shadow: 0 1px 10px #f4f5f8;
     border-radius: 0 0 50% 50%;
     margin-left: -4.5vh;
@@ -50,30 +50,30 @@
 }
 
 ion-row {
-    margin-top: -55px;
-    ion-col {
-        justify-content: center;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        ion-item {
-            width: 94%;
-            margin: auto;
-            border: 1px solid #f4f5f8;
-            box-shadow: 1px #222428;
-            border-radius: 5px;
-            ion-label {
-                font-size: 14px;
-                font-weight: bold;
-                p {
-                    font-size: 10px;
-                }
-            }
-            ion-icon {
-                font-size: 30px;
-            }
+  margin-top: -55px;
+  ion-col {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    ion-item {
+      width: 94%;
+      margin: auto;
+      border: 1px solid #f4f5f8;
+      box-shadow: 1px #222428;
+      border-radius: 5px;
+      ion-label {
+        font-size: 14px;
+        font-weight: bold;
+        p {
+          font-size: 10px;
         }
+      }
+      ion-icon {
+          font-size: 30px;
+      }
     }
+  }
 }
 
 ion-list {
@@ -240,20 +240,19 @@ $time-4: 200s;
 .page-wrapper {
   text-align: center;
   color: #fff;
-  z-index: 2;
+  z-index: 2;"
 }
 
 .field{
-    font-family: 'Poppins';
-    padding: 20px;
-    margin-bottom: 15px;
-    margin-top: -10px;
-    text-align: center;
+  font-family: 'Poppins';
+  padding: 20px;
+  margin-bottom: 15px;
+  margin-top: -10px;
+  text-align: center;
 }
 
 .botoes{
-    display: flex;
-    margin-top: -28px;
-    
+  display: flex;
+  margin-top: -28px;
 }
 
