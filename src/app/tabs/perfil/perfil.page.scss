@@ -258,6 +258,7 @@ $time-4: 200s;
   z-index: 9999;
   position: relative;
   top: 0;
+  margin-top: -15px;
 }
 
 .field {
@@ -268,7 +269,8 @@ $time-4: 200s;
   text-align: center;
 }
 
-.botoes   {
+.botoes {
+  font-family: 'Poppins';
   display: flex;
   margin-top: -28px;
 }
