@@ -25,14 +25,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/components/slides',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/components/slides',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
