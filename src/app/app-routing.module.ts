@@ -6,6 +6,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'slides',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
     canActivate: [AuthGuard]
   },
@@ -44,10 +45,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/filtro-nivel/filtro-nivel.module').then( m => m.FiltroNivelPageModule),
     canActivate: [AuthGuard]
   },
-
-
-
-
 
 ];
 @NgModule({
