@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { SlidesPage } from './slides.page';
  
 const routes: Routes = [
   {
@@ -26,14 +25,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/slides',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/slides',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
