@@ -1,52 +1,52 @@
 .user-name{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-header{
-    height: 25vh;
-    width: 120%;
-    background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8dc4fc 100%);
-	  background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8ec5fc 100%);
-    background-image: -webkit-linear-gradient( 45deg, #1e0033, #5160ff);
-	  background-size: 200% 200%;
-	  animation: colors 6s linear infinite;
-  	overflow: hidden;
-    box-shadow: 0 1px 10px #f4f5f8;
-    border-radius: 0 0 50% 50%;
-    margin-left: -4.5vh;
-    margin-top: -5px;
-    justify-content: center;
-    display: inline-block;
-    align-items: center;
-    div{
-        transform: translateY(2vh);
-        ion-avatar{
-            width: 15vh;
-            height: 15vh;
-            background: #f4f5f8;
-            margin-bottom: 5px;border: 7px solid #3880ff;
-            margin-left: -3%;
-        }
+  height: 25vh;
+  width: 120%;
+  background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8dc4fc 100%);
+  background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8ec5fc 100%);
+  background-image: -webkit-linear-gradient( 45deg, #1e0033, #5160ff);
+  background-size: 200% 200%;
+  animation: colors 6s linear infinite;
+  overflow: hidden;
+  box-shadow: 0 1px 10px #f4f5f8;
+  border-radius: 0 0 50% 50%;
+  margin-left: -4.5vh;
+  margin-top: -5px;
+  justify-content: center;
+  display: inline-block;
+  align-items: center;
+  div{
+    transform: translateY(2vh);
+    ion-avatar{
+      width: 15vh;
+      height: 15vh;
+      background: #f4f5f8;
+      margin-bottom: 5px;border: 7px solid #3880ff;
+      margin-left: -3%;
     }
+  }
 
 
-    /* Background animation */
-    @keyframes colors {
-        0% {
-            background-position: 0% 25%;
-        }
-        25%{
-            background-position: 25% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
+  /* Background animation */
+  @keyframes colors {
+    0% {
+        background-position: 0% 25%;
     }
+    25%{
+        background-position: 25% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
 }
 
 ion-row {
@@ -113,22 +113,34 @@ ion-list {
 }
 
 .publi-user {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin-top: 5%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.publi-user {
+  ion-col {
+    margin-top: 10%;
+  }
+}
+
+.publi-user {
+  publi-user.img {
+    width: 100%;
+  }
 }
 
 ion-segment {
-    font-family: 'Poppins';
-    font-size: 10px;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-bottom: 50px;
+  font-family: 'Poppins';
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 3%;
 }
 
 ion-button {
-    font-family: 'Poppins';
+  font-family: 'Poppins';
 }
 
 /* Config */
@@ -240,10 +252,10 @@ $time-4: 200s;
 .page-wrapper {
   text-align: center;
   color: #fff;
-  z-index: 2;"
+  z-index: 2;
 }
 
-.field{
+.field {
   font-family: 'Poppins';
   padding: 20px;
   margin-bottom: 15px;
@@ -251,7 +263,7 @@ $time-4: 200s;
   text-align: center;
 }
 
-.botoes{
+.botoes   {
   display: flex;
   margin-top: -28px;
 }
