@@ -1,32 +1,32 @@
-.feed{
+.feed {
   margin: 0 auto;
   max-width: 500px;
 }
 
 .translucent {
-    -webkit-backdrop-filter: blur( 13.5px );
-    text-align: justify;
-    font-family: 'Poppins';
-    backdrop-filter: blur( 13.5px );
-    background: rgba( 255, 255, 255, 0.35 );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  -webkit-backdrop-filter: blur( 13.5px );
+  text-align: justify;
+  font-family: 'Poppins';
+  backdrop-filter: blur( 13.5px );
+  background: rgba( 255, 255, 255, 0.35 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 ion-card {
     margin-bottom: 30px;
-    img {
+  img {
     width: 100%;
     background: rgb(219, 219, 219);
-    }
+  }
 
 
-  ion-card-header{
+  ion-card-header {
     padding-top: 20px;
     padding-bottom: 6px;
   }
 
-  ion-badge{
+  ion-badge {
     margin-top: 8px;
     margin-right: 12px;
     --padding-top: 5px;
@@ -35,35 +35,79 @@ ion-card {
     --padding-right: 15px;
   }
 }
+
 .actions-btn {
-    ion-button {
-        border-radius: 50px;
-        background: #2f303573 !important;
-        width: 90px;
-        margin: 0 0 5% 2.5%;
-        height: 25px;
-        font-size: 10pt;
-        outline: none;
-    }
+  ion-button {
+    border-radius: 50px;
+    background: #2f303573 !important;
+    width: 90px;
+    margin: 0 0 5% 2.5%;
+    height: 25px;
+    font-size: 10pt;
+    outline: none;
+  }
 }
 
-.comentario{
-  width: 100px;
-  position: absolute;
-  font-size: 34px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
-  margin: auto;
+.clientActions {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  margin: 0 0 10px 5px;
+  padding: 1em;
+  float: left;
+}
+
+.clientActions {
+  .like, .comment, .share {
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    margin-left: 0.5rem;
+    transition: all ease-in-out 0.5s;
+    background: #ddddddb3;
+    border-radius: 50px;
+  }
+}
+
+.comentario {
+  font-size: 32px;
   color:#04085E;
 }
 
-.curtida{
-  font-size: 34px;
-  color: #04085E;
+.curtida {
+  font-size: 32px;
+  color:#04085E;
 }
 
-.menu{
+.clientActions {
+  .like:focus {
+    background: #ff0241;
+    .curtida {
+      color: #fff;
+    }
+  }
+
+  .comment:focus {
+    background: #02ff96;
+    .comentario {
+      color: #fff;
+    }
+  }
+
+  .share:focus {
+    background: #02e1ff;
+    .enviar {
+      color: #fff;
+    }
+  }
+}
+
+.enviar {
+  font-size: 30px;
+  color:#04085E;
+}
+
+.menu {
   font-size: 10px;
 }
