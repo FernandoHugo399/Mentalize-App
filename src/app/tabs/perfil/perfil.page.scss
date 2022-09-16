@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-
 .user-name{
     text-align: center;
     justify-content: center;
@@ -9,7 +7,12 @@
 .main-header{
     height: 25vh;
     width: 120%;
-    background: linear-gradient(90deg, #5260ff, #3880ff);
+    background-image: -ms-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8dc4fc 100%);
+	background-image: -moz-linear-gradient( 136deg, #e0c3fc 0%, #275fcf, #8ec5fc 100%);
+    background-image: -webkit-linear-gradient( 45deg, #1e0033, #5160ff);
+	background-size: 200% 200%;
+	animation: colors 6s linear infinite;
+	overflow: hidden;
     box-shadow: 0 1px 10px #f4f5f8;
     border-radius: 0 0 50% 50%;
     margin-left: -4.5vh;
@@ -111,5 +114,124 @@ ion-segment{
 
 ion-button{
     font-family: 'Poppins';
+}
+
+/* Config */
+
+$color-particle: #fff;
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 200s;
+
+/* mixins */
+
+@function particles($max) {
+  $val: 0px 0px $color-particle;
+  @for $i from 1 through $max {
+    $val: #{$val}, random($spacing)+px random($spacing)+px $color-particle;
+  }
+  @return $val;
+}
+
+@mixin particles($max) {
+  box-shadow: particles($max);
+  border-radius: 50%;
+}
+
+/* Partículas */
+
+.page-bg, .animation-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-bg {
+  background-blend-mode: screen;
+  background-size: cover;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+
+.particle, .particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: relative;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  @include particles(1000);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-1:after {
+  @include particles(900);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  @include particles(800);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  @include particles(500);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3:after {
+  @include particles(1100);
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+  @include particles(1200);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4:after {
+  @include particles(700);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY($spacing * -1);
+  }
+}
+
+.page-wrapper {
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.field{
+    font-family: 'Poppins';
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f4f5f8;
 }
 
