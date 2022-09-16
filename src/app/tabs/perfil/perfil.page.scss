@@ -17,6 +17,7 @@
   border-radius: 0 0 50% 50%;
   margin-left: -4.5vh;
   margin-top: -5px;
+  z-index: 1;
   justify-content: center;
   display: inline-block;
   align-items: center;
@@ -50,6 +51,7 @@
 }
 
 ion-row {
+  z-index: 1;
   margin-top: -55px;
   ion-col {
     justify-content: center;
@@ -116,6 +118,7 @@ ion-list {
   margin-top: 5%;
   display: flex;
   width: 100%;
+  z-index: 1;
   flex-direction: column;
   justify-content: center;
 }
@@ -252,7 +255,9 @@ $time-4: 200s;
 .page-wrapper {
   text-align: center;
   color: #fff;
-  z-index: 2;
+  z-index: 9999;
+  position: relative;
+  top: 0;
 }
 
 .field {
