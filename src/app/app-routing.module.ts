@@ -11,7 +11,6 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    redirectTo: 'slides',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
     canActivate: [LoggedGuard]
   },
