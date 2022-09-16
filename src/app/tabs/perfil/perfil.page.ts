@@ -13,7 +13,6 @@ export class PerfilPage {
   async presentAlert() {
     const telefone = await this.alertController.create({
       header: 'Telefone',
-      subHeader: 'Important message',
       message: '(81) 9 9976-0358',
       buttons: ['OK'],
     });
@@ -23,7 +22,6 @@ export class PerfilPage {
   async presentEmail() {
     const email = await this.alertController.create({
       header: 'E-mail',
-      subHeader: 'Important message',
       message: 'natacataldi@gmail.com',
       buttons: ['OK'],
     });
