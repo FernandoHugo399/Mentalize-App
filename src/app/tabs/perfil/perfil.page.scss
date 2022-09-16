@@ -84,6 +84,7 @@ ion-list {
     ion-item {
         margin-top: 1vh;
         ion-label {
+            text-align: center;
             font-family: 'Poppins';
             font-size: 14px;
             font-weight: bold;
@@ -230,8 +231,15 @@ $time-4: 200s;
 
 .field{
     font-family: 'Poppins';
-    padding: 15px;
+    padding: 20px;
     margin-bottom: 15px;
-    background: #f4f5f8;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.botoes{
+    display: flex;
+    margin-top: -28px;
+    
 }
 
