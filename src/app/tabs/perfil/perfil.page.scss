@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.general {
+  z-index: 1;
+}
+
 .main-header{
   height: 25vh;
   width: 120%;
@@ -118,7 +122,6 @@ ion-list {
   margin-top: 5%;
   display: flex;
   width: 100%;
-  z-index: 1;
   flex-direction: column;
   justify-content: center;
 }
@@ -255,7 +258,6 @@ $time-4: 200s;
 .page-wrapper {
   text-align: center;
   color: #fff;
-  z-index: 9999;
   position: relative;
   top: 0;
   margin-top: -15px;
