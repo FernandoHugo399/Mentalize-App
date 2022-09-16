@@ -41,7 +41,7 @@
 <ion-list lines="full">
   <ion-item>
     <ion-label>
-      <ion-text>Nome</ion-text>
+      <ion-text>@Natã_Cataldi</ion-text>
       <p><ion-text color="dark">Natã Cataldi</ion-text></p>
     </ion-label>
   </ion-item>
@@ -51,18 +51,10 @@
     Tec. Desenvolvimento de Sistemas
   </p>
 
-  <ion-item>
-    <ion-label>
-      <ion-text>Telefone</ion-text>
-      <p><ion-text color="dark">(81) 9 9976-0358</ion-text></p>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>
-      <ion-text>Email</ion-text>
-      <p><ion-text color="dark">natacataldi@gmail.com</ion-text></p>
-    </ion-label>
-  </ion-item>
+  <ion-button (click)="presentAlert()">Telefone</ion-button>
+
+  <ion-button (click)="presentEmail()">E-mail</ion-button>
+  
 </ion-list>
 
 <ion-segment class="ion-padding-bottom" value="postagens">

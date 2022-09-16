@@ -74,10 +74,14 @@ ion-row {
 }
 
 ion-list {
-    margin-top: -1%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
     ion-item {
         margin-top: 1vh;
         ion-label {
+            font-family: 'Poppins';
             font-size: 14px;
             font-weight: bold;
             p {
@@ -105,9 +109,7 @@ ion-segment{
     margin-bottom: 50px;
 }
 
-.field{
+ion-button{
     font-family: 'Poppins';
-    padding: 15px;
-    margin-bottom: 15px;
-    background: #f4f5f8;
 }
+
