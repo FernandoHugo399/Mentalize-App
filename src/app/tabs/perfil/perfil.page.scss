@@ -108,7 +108,6 @@ ion-segment{
     margin-bottom: 50px;
 }
 
-
 /* Config */
 
 $color-particle: #fff;
@@ -219,4 +218,11 @@ $time-4: 200s;
   text-align: center;
   color: #fff;
   z-index: 2;
+}
+
+.field{
+    font-family: 'Poppins';
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f4f5f8;
 }
