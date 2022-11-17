@@ -8,41 +8,48 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="search">
-    <ion-list *ngIf="!publishes; else hasPublishes">
-      <!-- Filtro grau de ensino -->
-      <div class="divider">
-        <ion-label>
-          Grau de Ensino
-        </ion-label>
-      </div>
+  <ion-list *ngIf="!publishes; else hasPublishes">
+    <!-- Filtro grau de ensino -->
+    <div class="divider">
+      <ion-label>
+        Grau de Ensino
+      </ion-label>
+    </div>
 
-      <div *ngIf="nivelEnsino"> <!-- Caso exista valores na váriavel nivel ensino, exiba: -->
-        <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel.nivel}}"> <!-- Para cada item na variavel nivel ensino, exiba:  -->
-          <ion-item>
-            <ion-icon [name]="nivel.icone" slot="start"></ion-icon>
-            <ion-label>{{nivel.nivel}}</ion-label>
-          </ion-item>
-          <ion-card-content> {{nivel.descricao}} </ion-card-content>
-        </ion-card>
-      </div>
+    <div *ngIf="nivelEnsino" class="web-card-grau"> <!-- Caso exista valores na váriavel nivel ensino, exiba: -->
+      <ion-card *ngFor="let nivel of nivelEnsino" routerLink="/grau/{{nivel.nivel}}"> <!-- Para cada item na variavel nivel ensino, exiba:  -->
+        <ion-item>
+          <ion-icon [name]="nivel.icone" slot="start"></ion-icon>
+          <ion-label>{{nivel.nivel}}</ion-label>
+        </ion-item>
+        <ion-card-content> {{nivel.descricao}} </ion-card-content>
+      </ion-card>
+    </div>
 
-      <!-- Filtro por matérias -->
-      <div class="divider">
-        <ion-label>
-          Matérias
-        </ion-label>
-      </div>
+    <!-- Filtro por matérias -->
+    <div class="divider">
+      <ion-label>
+        Matérias
+      </ion-label>
+    </div>
 
-      <div *ngIf="materias"> <!-- caso exista valores na variável matéria, exiba: -->
-        <ion-card *ngFor="let materia of materias" routerLink="/materia/{{materia.materia}}"> <!-- para cada item na variável, exiba: -->
-          <ion-item >
-            <ion-icon [name]="materia.icone" slot="start"></ion-icon>
-            <ion-label>{{materia.materia}}</ion-label>
-          </ion-item>
-          <ion-card-content> {{materia.descricao}} </ion-card-content>
-        </ion-card>
-      </div>
-    </ion-list>
+    <div *ngIf="materias" class="web-card-materia"> <!-- caso exista valores na variável matéria, exiba: -->
+      <ion-card *ngFor="let materia of materias" routerLink="/materia/{{materia.materia}}"> <!-- para cada item na variável, exiba: -->
+        <ion-item >
+          <ion-icon [name]="materia.icone" slot="start"></ion-icon>
+          <ion-label>{{materia.materia}}</ion-label>
+        </ion-item>
+        <ion-card-content> {{materia.descricao}} </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-list>
+<!--
+  <div class="animation-wrapper">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+  </div>-->
 </ion-content>
 
 <ng-template #hasPublishes>
