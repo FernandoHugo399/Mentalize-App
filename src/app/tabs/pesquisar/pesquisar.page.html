@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="header">
-    <ion-searchbar type="search" placeholder="Pesquise aqui"
+    <ion-searchbar type="search" class="searchbar" placeholder="Pesquise aqui"
       [(ngModel)]="queryText"
       (ionChange)="filterInstitutions($event)">
     </ion-searchbar>
@@ -43,13 +43,6 @@
       </ion-card>
     </div>
   </ion-list>
-<!--
-  <div class="animation-wrapper">
-    <div class="particle particle-1"></div>
-    <div class="particle particle-2"></div>
-    <div class="particle particle-3"></div>
-    <div class="particle particle-4"></div>
-  </div>-->
 </ion-content>
 
 <ng-template #hasPublishes>
