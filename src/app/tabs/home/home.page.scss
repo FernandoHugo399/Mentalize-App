@@ -21,7 +21,6 @@ ion-card {
     background: rgb(219, 219, 219);
   }
 
-
   ion-card-header {
     padding-top: 20px;
     padding-bottom: 6px;
@@ -111,4 +110,32 @@ ion-card {
 
 .menu {
   font-size: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  ion-card {
+    margin: auto;
+    max-width: 80%;
+    border-radius: 12px;
+    margin-bottom: 1em;
+  }
+
+  img {
+    margin-bottom: -1em;
+  }
+
+  ion-list {
+    background: none;
+  }
+
+  .menu {
+    margin: 2%;
+  }
 }

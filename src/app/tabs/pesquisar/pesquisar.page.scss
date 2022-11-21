@@ -118,12 +118,9 @@ ion-list {
 
 @media screen and (min-width: 1024px) {
   .header {
-    -webkit-backdrop-filter: blur( 13.5px );
-    text-align: justify;
     font-family: 'Poppins';
     box-shadow: none;
-    backdrop-filter: blur( 13.5px );
-    --background: rgba( 255, 255, 255, 0.35 );
+    --background: rgb(255, 255, 255);
     .searchbar {
       margin: auto;
       width: 50%;
