@@ -2,17 +2,16 @@
 
 /* General */
 ion-card {
-  -webkit-backdrop-filter: blur( 4px );
   background: rgba( 255, 255, 255, 0.2 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 4px );
   border-radius: 10px;
-  color: #fff;
+  color: #2d1f5a;
+  font-family: 'Poppins', sans-serif;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .search{
-  --background: linear-gradient(0deg, #253b68, #3a7cdf) 100% 100% no-repeat;
+  --background: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -23,7 +22,7 @@ ion-list {
 .header {
   padding: 0;
   box-shadow: 0 8px 32px 0 rgba(13, 18, 110, 0.301);
-  color: #fff;
+  color: rgb(69, 33, 124);
   ion-searchbar {
     position: relative;
     padding: 5% 3%;
@@ -34,7 +33,8 @@ ion-list {
 .divider {
   margin: 5px;
   padding: 5px;
-  color: #fff;
+  color: rgb(63, 39, 117);
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   text-align: center;
 }
@@ -56,6 +56,9 @@ ion-list {
 
 .feed{
   ion-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     color: black;
     margin-bottom: 30px;
     background: rgb(218, 218, 218);
@@ -110,5 +113,42 @@ ion-list {
 
   .menu{
     font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    -webkit-backdrop-filter: blur( 13.5px );
+    text-align: justify;
+    font-family: 'Poppins';
+    box-shadow: none;
+    backdrop-filter: blur( 13.5px );
+    --background: rgba( 255, 255, 255, 0.35 );
+    .searchbar {
+      margin: auto;
+      width: 50%;
+      padding: 3% 1%;
+      --border-radius: 1em;
+    }
+  }
+
+  .web-card-grau {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .web-card-grau ion-card {
+    width: 30%;
+  }
+
+  .web-card-materia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .web-card-materia ion-card {
+    width: 94%;
   }
 }
